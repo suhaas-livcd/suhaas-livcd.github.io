@@ -10,8 +10,8 @@ Its a aesthetic music player controlled using
 * Guestures done on screen when activity is on
 * Stuff like that..
 
-Check out the [App blog][jekyll-docs] for more info on how to get the most out of Jekyll. Please find all app development at [TuneInn GitHub repo][jekyll-gh]. If you have questions/bugs/features you can raise them on [TuneInn Issues][jekyll-talk].
+Check out the [App blog][suhaas-docs] for more info on how to get the most out of Jekyll. Please find all app development at [TuneInn GitHub repo][suhaas-gh]. If you have questions/bugs/features you can raise them on [TuneInn Issues][suhaas-talk].
 
-[jekyll-docs]: https://suhaas-livcd.github.io/GestureTuneINN/
-[jekyll-gh]:   https://github.com/suhaas-livcd/GestureTuneINN
-[jekyll-talk]: https://github.com/suhaas-livcd/GestureTuneINN/issues
+[suhaas-docs]: https://suhaas-livcd.github.io/GestureTuneINN/
+[suhaas-gh]:   https://github.com/suhaas-livcd/GestureTuneINN
+[suhaas-talk]: https://github.com/suhaas-livcd/GestureTuneINN/issues
