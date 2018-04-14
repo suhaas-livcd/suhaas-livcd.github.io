@@ -16,11 +16,11 @@
 title: Suhaas Srinivas G
 email: suhaas95@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Motto is simple. Its just to Live Learn Love Play Talk.
-  Wanna do something for society or something crazy. Gear up. Lets Talk. Lets Kick start the project.
+  Motto is simple. Its just to Live Learn Love Play Talk. Wanna do something for society or something crazy.
+  Gear up. Lets Talk. Lets Kick start the project.
   I love to code because it listens to what I say and I make her feel pretty,
   so kind of stays at my finger tip always. Haha.
-baseurl: "https://suhaas-livcd.github.io/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username:  suhaas-livcd
@@ -30,7 +30,6 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
