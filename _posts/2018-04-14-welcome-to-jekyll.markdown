@@ -4,8 +4,8 @@ title:  "Welcome to Jekyll!"
 date:   2018-04-14 12:12:04 +0530
 categories: jekyll update
 ---
-# [GestureTuneINN](https://suhaas-livcd.github.io/GestureTuneINN/) :musical_score:  :clap: :hand: :musical_keyboard: 
-Hey there !:neckbeard: Well! what is it ? Its a aesthetic music player controlled using
+
+Its a aesthetic music player controlled using
 * Guestures using motion and hand
 * Guestures done on screen when activity is on
 * Stuff like that..
