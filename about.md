@@ -7,7 +7,7 @@ permalink: /about/
 
 Project 
 
-Transcedence - check the [demo](http://suhaas-livcd.github.io/Projects/NSS_Transcedence/index.html) here
+Transcedence - check the [demo](http://suhaas-livcd.github.io/Projects/Resume/resources/profile.png) here
 
 <!-- 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="http://127.0.0.1:4000/Projects/NSS_Transcedence/index.html">Click</a> [jekyllrb.com](https://jekyllrb.com/)
