@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Suhaas Srinivas G
+title: Live the moment
 email: suhaas95@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -30,6 +30,15 @@ theme: minima
 plugins:
   - jekyll-feed
 
+#Defined the default layout for the posts, even if something is forgotten it will take the preferred layout.
+#To be defined for other layout.
+defaults:
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      layout: "post"
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

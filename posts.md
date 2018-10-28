@@ -1,14 +1,9 @@
 ---
 layout: home
-title: About
-permalink: /about/
+title: Posts
+permalink: /posts/
+categories: index pagr
 ---
-
-
-Project 
-
-Transcedence - check the [demo](http://suhaas-livcd.github.io/Projects/NSS_Transcedence/index.html) here
-Resume - check the [demo](http://suhaas-livcd.github.io/Projects/Resume/index.html)
 
 <!-- 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="http://127.0.0.1:4000/Projects/NSS_Transcedence/index.html">Click</a> [jekyllrb.com](https://jekyllrb.com/)
