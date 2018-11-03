@@ -30,20 +30,20 @@ theme: minima
 plugins:
   - jekyll-feed
 
-sass:
-    load_paths:
-        - _sass
-        - node_modules
-exclude: []
+# sass:
+#     load_paths:
+#         - _sass
+#         - node_modules
+# exclude: []
 #Defined the default layout for the posts, even if something is forgotten it will take the preferred layout.
 #To be defined for other layout.
-defaults:
-  -
-    scope:
-      path: ""
-      type: "post"
-    values:
-      layout: "post"
+# defaults:
+#   -
+#     scope:
+#       path: ""
+#       type: "post"
+#     values:
+#       layout: "post"
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
