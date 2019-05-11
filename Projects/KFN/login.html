@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign-Up/Login Form</title>
+    <!--
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    -->
+    <link rel="stylesheet" href="css/normalizelogin.css">
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="css/loginlogin.css">
+        <link rel="stylesheet" href="css/stylelogin.css">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <style type="text/css">
+            .inputfile{
+	opacity: 0;
+	overflow: hidden;
+	z-index: 1;
+        cursor: pointer;
+            }
+            
+        </style>
+  </head>
+  <body oncontextmenu="return false">
+           
+<!--       <?php
+        error_reporting(0);
+        session_start();
+        if(!isset($_SESSION['signedupuser'])){
+            $result='<strong>Sign Up / Log In</strong> to be a part of KFN';
+            $val='alert-danger';
+          }
+          else{
+              $username=$_SESSION['signedupuser'];
+               $result='<strong>Welcome,'.$username.'</strong> Please login to access the benefits of KFN';
+            $val='alert-success';
+          }
+            ?> -->
+
+
+
+    <div class="form">
+        <div class="alert <?php echo $val;?> alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+            <?php echo $result;?>
+            </div>
+    
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+          
+          <form action="validatesignup.php" method="post" enctype="multipart/form-data">
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+                <input  id="fname" type="text" name="sfname" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+                <input id="lname" type="text" name="slname" required autocomplete="off"/>
+            </div>
+          </div>
+             
+              <div class="field-wrap">
+                  <label>
+                      Your Awesome place of birth<span class="req">*</span>
+                  </label>
+                  <input  id="bplace" type="text" name="sbplace" required autocomplete="off" />
+              </div>
+
+              <div class="field-wrap">
+                  <label>
+                     aadhar card num without spacing & hiphens<span class="req">*</span>
+                  </label>
+                  <input id="ano" type="text" name="saadharno" required autocomplete="off" />
+              </div>
+
+              <div class="field-wrap">
+                  <label>
+                     Phone No<span class="req">*</span>
+                  </label>
+                    <input id="phoneno" type="tel" name="sphoneno" required autocomplete="off" />
+              </div>
+
+               
+              
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+              <input  type="email" name="semailid" required autocomplete="off"/>
+          </div>
+          
+              <div class="field-wrap">
+                   <label>
+                       <span class="req">Upload Your Awesome Picture <i class="fa fa-reddit-alien"></i></span>
+                  </label>
+                  <input class="inputfile" type="file" name="images[]" accept="image/*"  /> 
+                   
+                 </div>
+              
+          <div class="field-wrap">
+            <label>
+              <span class="req" style="color:#91989D;">Set a Password</span><span class="req">*</span>
+            </label>
+           
+                        
+              <input id="pwd" type="password" name="spasswd" placeholder="" required />
+            <div></div>
+            <div class="pwstrength_viewport_progress"></div>
+          </div>
+          
+              <input type="submit" name="sub" class="button button-block" value="Get Started">
+          </form>
+        </div>
+        
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="validatelogin.php" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+                <input type="email" name="lemail" required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+              <input type="password" name="lpasswd" required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="ForgotPassword.html">Forgot Password?</a></p>
+          
+          <input type="submit" class="button button-block" value="Log In"/>
+          
+          </form>
+
+        </div>
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+      <!--
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+          -->
+          
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/indexlogin.js"></script>
+        <script src="js/loginlogin.js"></script>
+      <!--BACKSTRETCH-->
+      <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+      <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
+      <script>$.backstretch("assets/img/BGS/login3.jpg", { speed: 500 });</script>
+      
+  </body>
+  
+</html>
