@@ -6,14 +6,16 @@ layout: default
 title: About 
 ---
 
-```
-Hi there ^_^ !
-I am still working on the site.
-```
 
+> Hi there :relaxed: <br/>
+> I am still working on this site. <br/>
+> Last Updated : May'19
+
+<!--
 If you would like to know more about my work experience and education, please check out my [Resume][resume-link]
+-->
 
-You can [report][report-issue-link] any issue's or bugs or enhancement's.
+To reach me - LinkedIn me with a message. :point_down:
 
 [resume-link]: http://suhaas-livcd.github.io/Projects/Resume/index.html
 [report-issue-link]: https://github.com/suhaas-livcd/suhaas-livcd.github.io/issues/new
