@@ -9,13 +9,12 @@ title: About
 
 > Hi there :relaxed: <br/>
 > I am still working on this site. <br/>
-> Last Updated : May'19
 
 <!--
 If you would like to know more about my work experience and education, please check out my [Resume][resume-link]
 -->
 
-To reach me - LinkedIn me with a message. :point_down:
+`last updated : Sun May 19 01:14:50 IST 2019`
 
 [resume-link]: http://suhaas-livcd.github.io/Projects/Resume/index.html
 [report-issue-link]: https://github.com/suhaas-livcd/suhaas-livcd.github.io/issues/new
