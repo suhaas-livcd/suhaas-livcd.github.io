@@ -14,7 +14,7 @@ title: About
 If you would like to know more about my work experience and education, please check out my [Resume][resume-link]
 -->
 
-`last updated : Sun May 19 01:14:50 IST 2019`
+`last updated at {{ "now" | date: "%Y-%m-%d %H:%M" }}`
 
 [resume-link]: http://suhaas-livcd.github.io/Projects/Resume/index.html
 [report-issue-link]: https://github.com/suhaas-livcd/suhaas-livcd.github.io/issues/new
