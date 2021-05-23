@@ -1,0 +1,25 @@
+{%- assign post = site.posts | where:"url", include.url | first -%}
+{%- unless post -%}
+  {%- assign post = site.pages | where:"url", include.url | first -%}
+{%- endunless -%}
+
+{%- assign thumbnail = post.thumbnail -%}
+{%- unless thumbnail -%}
+  {%- assign thumbnail = post.meta-image -%}
+{%- endunless -%}
+
+{%- assign description = post.tagline -%}
+{%- unless description -%}
+  {%- assign description = post.meta-description -%}
+{%- endunless -%}
+
+<div class="tutorial-link-box">
+  <a href="{{ post.url }}" >
+    <img class="thumbnail-image" src="{{ thumbnail }}" alt="{{ post.title}}" />
+  </a>
+  <a class="title" href="{{ post.url }}">
+    {{ post.title }}
+    {% if post.content contains "youtube.com/embed" -%}▶{%- endif -%}
+  </a>
+  <p>{{ description }}</p>
+</div>

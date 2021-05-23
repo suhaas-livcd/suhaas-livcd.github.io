@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+
+{%- for tag in page.tags %}
+  <a href="/tags/?tag={{tag}}" class="label label-default">{{tag}}</a>
+{%- endfor -%}
+
+<hr>
+
+{{ content }}
+
+<hr>
+
+{% unless page.disableComments %}
+  <h1>Comments and Questions</h1>
+
+  <p>
+    Happy Coding is a community of folks just like you learning about coding.
+    <br>
+    Do you have a comment or question? Post it here!
+  </p>
+
+  {% include comments.html %}
+{% endunless %}
