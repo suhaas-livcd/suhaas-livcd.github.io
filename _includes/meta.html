@@ -1,0 +1,35 @@
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="article:published_time" content="{{ page.date }}" />
+{%- if page.updated %}
+    <meta property="article:modified_time" content="{{ page.updated }}" />
+{%- endif %}
+    <meta property="twitter:url" content="https://HappyCoding.io{{page.url}}" />
+    <meta property="og:url" content="https://HappyCoding.io{{page.url}}" />
+    <meta name="twitter:site" content="@KevinAWorkman">
+    <meta name="twitter:creator" content="@KevinAWorkman">
+    <meta property="og:site_name" content="Happy Coding" />
+
+{%- if page.meta-image %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="https://HappyCoding.io{{page.meta-image}}" />
+    <meta property="og:image" content="https://HappyCoding.io{{page.meta-image}}" />
+{%- endif -%}
+
+{%- if page.meta-title %}
+    <meta name="twitter:title" content="{{page.meta-title}}">
+    <meta property="og:title" content="{{page.meta-title}}" />
+{%- endif %}
+
+{%- if page.meta-description %}
+    <meta property="twitter:description" content="{{page.meta-description}}" />
+    <meta property="og:description" content="{{page.meta-description}}" />
+    <meta name="description" content="{{page.meta-description}}">
+{%- endif %}
+
+{%- if page.url == "/404" %}
+    <meta name="robots" content="noindex" />
+{%- endif %}
+
+    <meta name="google-site-verification"
+        content="_MHA_HyjRN41hU7ocjslu4AdeVWgiS_9QAiSuonBmEI" />

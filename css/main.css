@@ -1,0 +1,328 @@
+@font-face {
+  font-family: 'Fixedsys';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/fixedsys/fixedsys.eot');
+  src: url('../fonts/fixedsys/fixedsys?#iefix') format('embedded-opentype'),
+    url('../fonts/fixedsys/fixedsys.woff') format('woff'),
+    url('../fonts/fixedsys/fixedsys.ttf') format('truetype'),
+    url('../fonts/fixedsys/fixedsys#FixedsysExcelsior301Regular') format('svg');
+  -webkit-font-smoothing: aliased;
+  font-smooth: never;
+}
+
+body {
+  margin: 10px;
+  font-family: 'Lato', sans-serif;
+  color: #323232;
+  background-image: none;
+  transition: background-image 1s linear;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #fbfbfb;
+  margin-bottom: 25px;
+  border: thin solid #323232;
+  -webkit-transition: background-color 10s linear, color 10s linear;
+  transition: background-color 10s linear, color 10s linear;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+}
+
+.navbar-home {
+  font-family: 'Fixedsys', monospace;
+  font-size: 24pt;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+.nav-link {
+  font-family: 'Fixedsys', monospace;
+  font-size: 16pt;
+  padding: 10px;
+  -webkit-transition: background-color 10s linear, color 10s linear;
+  transition: background-color 10s linear, color 10s linear;
+}
+
+#social-nav-link {
+  text-align: center
+}
+
+.nav-img {
+  height: 32px;
+}
+
+.previous-and-next-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-nav-and-content {
+  display: flex;
+}
+
+#left-nav {
+  /* Default style for mobile, see @media below. */
+  display: none;
+  float: left;
+  background-color: #fbfbfb;
+  border: thin solid #323232;
+  padding: 10px;
+  margin-right:25px;
+  height: fit-content;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.left-nav-social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.content {
+  background-color: #fbfbfb;
+  border: thin solid #323232;
+  padding: 25px;
+  vertical-align: top;
+
+  /* If text isn't wide enough, still stretch. */
+  flex-grow: 1;
+  /* Prevent code blocks from making content wider than container. */
+  max-width: calc(100% - 50px);
+}
+
+@media screen and (min-width: 400px) {
+  .nav-links {
+    grid-gap: 0 25px;
+  }
+}
+
+/* Body has 10px margin * 2, content is 1000px, + 20px for scrollbar. */
+@media screen and (min-width: 1040px) {
+
+  .nav-links {
+    grid-template-columns: auto auto auto auto auto auto;
+  }
+
+  #left-nav {
+    display: inline-block;
+    width: 150px;
+  }
+
+  .content {
+    width: 750px;
+  }
+
+  .nav-link {
+    width: initial;
+  }
+}
+
+#left-nav ul {
+  margin-top: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Nested ul should be indented a bit. */
+#left-nav ul ul {
+  padding-left: 5px;
+}
+
+#left-nav .left-nav-section {
+  margin-top: 10px;
+}
+
+#left-nav .left-nav-section li {
+  margin-top: 5px;
+}
+
+#left-nav .current {
+  font-weight: bolder;
+}
+
+/* Hide sections when we're not in them. */
+#left-nav .not-current + ul {
+  display: none;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+a {
+  transition: color 1s;
+  /*color: #4488ff; */
+  color: #0000ee;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #ff8844;
+  text-decoration: underline;
+}
+
+/* Surrounds code blocks */
+pre {
+  border: thin solid #cccccc;
+  padding: 20px;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+/* Code inside code block */
+pre code {
+  color:black;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
+/* Inline code */
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+.content img {
+  max-width:95%;
+}
+
+.jumbotron {
+  /* padding: 25px; */
+}
+
+.jumbotron h1 {
+  font-size: 68px;
+  margin: 0;
+}
+
+.jumbotron h2 {
+  font-size: 34px;
+}
+
+.jumbotron p {
+  font-size: 23px;
+}
+
+#markdown-toc {
+  border: thin solid #323232;
+  border-radius: 10px;
+  width: fit-content;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.thumbnail-link-container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  
+}
+
+.intro-tut {
+  display: inline-block;
+  width: 205px;
+  height: 300px;
+  border: thin solid black;
+  margin: 5px;  
+  padding: 5px;
+  vertical-align: top;
+}
+
+.intro-tut .tutorial-link-box {
+  margin: 0;
+}
+
+.tutorial-link-box {
+  width: 200px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  margin: 10px;
+}
+
+.tutorial-link-box .thumbnail-image {
+  width:200px;
+  height:100px;
+  max-width:100%;
+  border: thin solid #323232;
+}
+
+.tutorial-link-box a.title {
+  font-size: 1.2em;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.tutorial-link-box p {
+  margin-top: 0;
+}
+
+#etsy-listings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.etsy-thumbnail {
+  width: 170px;
+  margin: 10px;
+}
+
+.etsy-thumbnail img {
+  border: thin solid #323232;
+}
+
+/* Tags */
+.label {
+  padding: 5px;
+  border: thin solid #cccccc;
+}
+
+td, th  {
+  padding: 10px;
+  border: thin solid #cccccc;
+}
+
+footer {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  padding-top:25px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #fbfbfb;
+  border: thin solid #323232;
+}
+
+.social-img {
+  height: 32px;
+}
+
+.footer-img {
+  height: 32px;
+}
