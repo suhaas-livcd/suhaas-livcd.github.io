@@ -1,52 +1,31 @@
-const backgrounds = [
-	{img: "circles-1", code: "Circles.pde"},
-	{img: "diamond-circles-1", code: "DiamondCircles.pde"},
-	{img: "diamond-circles-2", code: "DiamondCircles.pde"},
-	{img: "diamond-circles-3", code: "DiamondCircles.pde"},
-	{img: "diamonds-1", code: "Diamonds.pde"},
-	{img: "diamonds-2", code: "Diamonds.pde"},
-	{img: "diagonal-1", code: "Diagonal.pde"},
-	{img: "diagonal-2", code: "Diagonal.pde"},
-	{img: "lines-1", code: "Lines.pde"},
-	{img: "random-walker-1", code: "RandomWalker.pde"},
-	{img: "rotated-squares-1", code: "RotatedSquares.pde"},
-	{img: "rotating-lines-1", code: "RotatingLines.pde"},
-	{img: "rotating-lines-2", code: "RotatingLines.pde"},
-	{img: "squares-1", code: "Squares.pde"},
-	{img: "squares-2", code: "Square.pde"},
-	{img: "squares-3", code: "Square.pde"},
-	{img: "squares-nested-1", code: "NestedSquares.pde"},
-	{img: "worms-1", code: "Worms.pde"},
-	{img: "worms-2", code: "Worms.pde"}
-];
 
-const backgroundObj = backgrounds[Math.floor(Math.random()*backgrounds.length)];
-
-function setRandomBackground(){
-	const backgroundUrl = "/images/backgrounds/" + backgroundObj.img + "-light.png";
-	
-	document.getElementsByTagName("body")[0].style.backgroundImage = "url(" + backgroundUrl + ")";
-	document.querySelector("#background-link").innerHTML = "Like the background? Check out its <a href='/images/backgrounds/code/" + backgroundObj.code + "'>source code</a> or <a href='https://github.com/KevinWorkman/HappyCoding/wiki/Contributing-Backgrounds'>contribute your own background</a>!";
+function setRandomBackground() {
+  // https://stackoverflow.com/questions/22692588/random-hex-generator-only-grey-colors/22692743
+  // var value = Math.random() * 0xFF | 0;
+  // var grayscale = (value << 16) | (value << 8) | value;
+  // var color = '#' + grayscale.toString(16);
+  // console.log(color);
+  document.getElementsByTagName("body")[0].style.backgroundColor = '#ececec';
 }
 
-function randomizeNavColor(){
+function randomizeNavColor() {
   const bgColor = 'rgb(' +
-      randomInt(200, 255) + ', ' +
-      randomInt(200, 255) + ', ' +
-      randomInt(200, 255) + ')';
+    randomInt(220, 255) + ', ' +
+    randomInt(220, 255) + ', ' +
+    randomInt(220, 255) + ')';
   document.getElementsByTagName("nav")[0].style.backgroundColor = bgColor;
 
-  Array.from(document.querySelectorAll( ".random-color" )).forEach(el => {
+  Array.from(document.querySelectorAll(".random-color")).forEach(el => {
     const fgColor = 'rgb(' +
-        randomInt(0, 50) + ', ' +
-        randomInt(0, 50) + ', ' +
-        randomInt(0, 50) + ')';
+      randomInt(0, 50) + ', ' +
+      randomInt(0, 50) + ', ' +
+      randomInt(0, 50) + ')';
     el.style.color = fgColor;
   });
 }
 
 function randomInt(min, max) {
-  return Math.floor(min + Math.random() * (max-min));
+  return Math.floor(min + Math.random() * (max - min));
 }
 
 function setRandomSocialLink() {
@@ -57,37 +36,36 @@ function setRandomSocialLink() {
   if (r < .2) {
     alt = 'twitter';
     href = 'https://twitter.com/KevinAWorkman';
-    src = '/images/twitter.png';
+    class_ = '<i class="fab fa-twitter"></i>';
   } else if (r < .4) {
     alt = 'facebook';
     href = 'http://www.facebook.com/HappyCoding.io';
-    src = '/images/facebook.png';
+    class_ = '<i class="fab fa-facebook"></i>';
   } else if (r < .6) {
     alt = 'github';
     href = 'https://github.com/KevinWorkman/HappyCoding';
-    src = '/images/GitHub-Mark-32px.png';
+    class_ = '<i class="fab fa-github"></i>';
   } else if (r < .8) {
     alt = 'etsy';
     href = 'https://www.etsy.com/shop/HappyCoding';
-    src = '/images/etsy.png';
+    class_ = '<i class="fab fa-etsy"></i>';
   } else {
     alt = 'youtube';
     href = 'https://youtube.com/kevinaworkman';
-    src = '/images/youtube.png';
+    class_ = '<i class="fab fa-youtube"></i>';
   }
 
   const aElement = document.getElementById('social-nav-link');
   const imgElement = document.getElementById('social-nav-img');
 
-  aElement.href = href;
-  imgElement.src = src;
-  imgElement.alt = alt;
+  aElement.href = 'https://github.com/suhaas-livcd';//href;
+  imgElement.innerHTML = '<i class="fab fa-github"></i>';//class_;
 }
 
-window.onload = function() {
+window.onload = function () {
   setRandomBackground();
 }
 
-if(Modernizr.csstransitions){
-	setInterval(randomizeNavColor, 10000);
+if (Modernizr.csstransitions) {
+  setInterval(randomizeNavColor, 10000);
 }

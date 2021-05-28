@@ -283,21 +283,6 @@ code {
   margin-top: 0;
 }
 
-#etsy-listings {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.etsy-thumbnail {
-  width: 170px;
-  margin: 10px;
-}
-
-.etsy-thumbnail img {
-  border: thin solid #323232;
-}
-
 /* Tags */
 .label {
   padding: 5px;

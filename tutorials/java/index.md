@@ -1,7 +1,7 @@
 ---
 title: Java Tutorials
 layout: default
-thumbnail: /tutorials/java/images/java-1.png
+thumbnail: /images/default_image.png
 categories: [tutorials, java]
 meta-title: Java Tutorials
 meta-description: Learn how to program in Java!
@@ -15,23 +15,15 @@ These tutorials assume you're already familiar with the basics of programming an
 
 <div class="thumbnail-link-container">
 {% include url-thumbnail.html url="/tutorials/java/setup" %}
-{% include url-thumbnail.html url="/tutorials/java/hello-world" %}
-{% include url-thumbnail.html url="/tutorials/java/creating-classes" %}
-{% include url-thumbnail.html url="/tutorials/java/errors" %}
-{% include url-thumbnail.html url="/tutorials/java/inheritance" %}
-{% include url-thumbnail.html url="/tutorials/java/swing" %}
-{% include url-thumbnail.html url="/tutorials/java/libraries" %}
-{% include url-thumbnail.html url="/tutorials/java/eclipse" %}
-{% include url-thumbnail.html url="/tutorials/java/exporting-jars" %}
 </div>
 
 ---
 
-# Advanced Java Tutorials
+# Advanced Java Tutorials coming soon
 
 Check these out as you need them.
 
 <div class="thumbnail-link-container">
-{% include url-thumbnail.html url="/tutorials/java/processing-in-java" %}
-{% include url-thumbnail.html url="/tutorials/java/unit-testing" %}
+{% include url-thumbnail.html url="/tutorials/java/setup" %}
+{% include url-thumbnail.html url="/tutorials/java/setup" %}
 </div>
