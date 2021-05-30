@@ -5,7 +5,7 @@ function setRandomBackground() {
   // var grayscale = (value << 16) | (value << 8) | value;
   // var color = '#' + grayscale.toString(16);
   // console.log(color);
-  document.getElementsByTagName("body")[0].style.backgroundColor = '#ececec';
+  // document.getElementsByTagName("body")[0].style.backgroundColor = '#ececec';
 }
 
 function randomizeNavColor() {
@@ -66,6 +66,6 @@ window.onload = function () {
   setRandomBackground();
 }
 
-if (Modernizr.csstransitions) {
-  setInterval(randomizeNavColor, 10000);
-}
+// if (Modernizr.csstransitions) {
+//   setInterval(randomizeNavColor, 10000);
+// }

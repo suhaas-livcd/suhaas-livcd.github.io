@@ -1,4 +1,6 @@
-name: Happy Coding
+name: Site_Name
+social_github_username:  suhaas-livcd
+social_linkedin_username: suhaassrinivas
 markdown: kramdown
 future: true
 kramdown:
