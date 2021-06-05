@@ -1,26 +1,15 @@
-@font-face {
-  font-family: 'Fixedsys';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/fixedsys/fixedsys.eot');
-  src: url('../fonts/fixedsys/fixedsys?#iefix') format('embedded-opentype'),
-    url('../fonts/fixedsys/fixedsys.woff') format('woff'),
-    url('../fonts/fixedsys/fixedsys.ttf') format('truetype'),
-    url('../fonts/fixedsys/fixedsys#FixedsysExcelsior301Regular') format('svg');
-  -webkit-font-smoothing: aliased;
-  font-smooth: never;
-}
 :root {
-  --link-color:rgb(0,122,255);
-  --text-color:rgb(54,54,56);
-  --body-color:#efefef;
+  --link-color:rgb(0, 81, 255);
+  --link-color_current:rgba(0, 81, 255, 0.1);
+  --text-color:#363638;
+  --body-color:#f1f1f1;
   --content-color:#fefefe;
-  --border-color:#050505;
+  --border-color:#cccccc;
   --hover-color:#232929;
 }
 body {
   margin: 10px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Courier', sans-serif;
   color: var(--text-color);
   background-image: none;
   background-color: var(--body-color);
@@ -54,14 +43,22 @@ nav {
 }
 
 .navbar-home {
-  font-family: 'Fixedsys', monospace;
+  font-family: 'Courier', sans-serif;
   font-size: 24pt;
   padding: 10px;
   flex-shrink: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 35px;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: capitalize;
 }
 
 .nav-link {
-  font-family: 'Fixedsys', monospace;
+  font-family: "Courier", Courier, sans-serif;
   font-size: 16pt;
   padding: 10px;
   -webkit-transition: background-color 10s linear, color 10s linear;
@@ -164,6 +161,8 @@ nav {
 
 #left-nav .current {
   font-weight: bolder;
+  background-color: var(--link-color_current);
+
 }
 
 /* Hide sections when we're not in them. */
@@ -261,11 +260,11 @@ code {
   vertical-align: top;
 }
 
-.intro-tut .tutorial-link-box {
+.intro-tut .wiki-link-box {
   margin: 0;
 }
 
-.tutorial-link-box {
+.wiki-link-box {
   width: 200px;
   display: inline-block;
   text-align: left;
@@ -273,21 +272,21 @@ code {
   margin: 10px;
 }
 
-.tutorial-link-box .thumbnail-image {
+.wiki-link-box .thumbnail-image {
   width:200px;
   height:100px;
   max-width:100%;
   border: thin solid #323232;
 }
 
-.tutorial-link-box a.title {
+.wiki-link-box a.title {
   font-size: 1.2em;
   display: block;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.tutorial-link-box p {
+.wiki-link-box p {
   margin-top: 0;
 }
 

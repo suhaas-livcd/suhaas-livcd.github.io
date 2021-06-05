@@ -7,7 +7,7 @@ title: "About"
 
 Many people have asked me how to learn how to program, or how to build an app, or make a website, or create digital art, or visualize data. This website is my answer to all of those questions.
 
-I'm going to fill this website with tutorials, example code, and ideas to get you started learning how to program. If you already know how to program, then hopefully this site is a useful reference.
+I'm going to fill this website with wiki, example code, and ideas to get you started learning how to program. If you already know how to program, then hopefully this site is a useful reference.
 
 I'm also hoping to build a community of people who want to talk about learning how to code or programming in general at [forum.HappyCoding.io](http://forum.happycoding.io) 
 
@@ -31,9 +31,9 @@ My name is Kevin Workman. I :heart: coding. I've been programming since high sch
 
 <hr/>
 
-**What makes {{ site.name }} different than other tutorial sites?**
+**What makes {{ site.name }} different than other wiki sites?**
 
-People learn in different ways, and I don't think education is a zero-sum game. Learning isn't an either/or type of thing. So I don't think this site is an *alternative* to other tutorial sites. I think you should take bits and pieces from all over the place and see what you like best.
+People learn in different ways, and I don't think education is a zero-sum game. Learning isn't an either/or type of thing. So I don't think this site is an *alternative* to other wiki sites. I think you should take bits and pieces from all over the place and see what you like best.
 
 I love what people like [Daniel Shiffman](http://shiffman.net/) and sites like [Fun Programming](http://funprogramming.org/), [Khan Academy](https://www.khanacademy.org/computing/computer-programming), and [Code Academy](https://www.codecademy.com/) are doing. I'm a big fan of all of the above.
 

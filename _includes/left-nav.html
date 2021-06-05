@@ -1,35 +1,36 @@
-    <div id="left-nav">
+<div id="left-nav">
+  <ul>
+    <li>
+      {% include left-nav-link.html url="/wiki/" %}
       <ul>
-        <li>
-          {% include left-nav-link.html url="/tutorials/" %}
-          <ul>
-            <li class="left-nav-section">
-              {% include left-nav-link.html url="/tutorials/java/" %}
-              {% include left-nav-section.html
-                posts=site.categories.java subsection="tutorials" %}
-              </li>
-
-          </ul>
+        <li class="left-nav-section">
+          {% include left-nav-link.html url="/wiki/java/" %}
+          {% include left-nav-section.html
+          posts=site.categories.java subsection="wiki" %}
+        </li>
+      </ul>
+    </li>
+    <li><hr></li>
+        <li class="left-nav-section">
+          {% include left-nav-link.html url="/blog/" %}
+            {% include left-nav-section.html
+                posts=site.categories.blog subsection="blog" %}
         </li>
         <li><hr></li>
-        
-        <li><a href="https://forum.happycoding.io">Forum</a></li>
-      </ul>
 
-      <hr>
-      <div class="left-nav-social-icons">
-        <div style="flex-basis: 100%"></div>
-        <a href="https://github.com/suhaas-livcd">
-          <span style="font-size: 2em;">
-            <i class="fab fa-github"></i>
-          </span></a>
-          <a href="https://github.com/KevinWorkman/HappyCoding">
-            <span style="font-size: 2em;">
-              <i class="fab fa-linkedin"></i>
-            </span></a>
-            <a href="https://github.com/suhaas-livcd">
-              <span style="font-size: 2em;">
-                <i class="fab fa-youtube"></i>
-              </span></a>
-      </div>
-    </div>
+    <li><a href="/forum/">Forum</a></li>
+  </ul>
+
+  <hr>
+  <div class="left-nav-social-icons">
+    <div style="flex-basis: 100%"></div>
+    <a href="https://github.com/suhaas-livcd">
+      <span style="font-size: 2em;">
+        <i class="fab fa-github"></i>
+      </span></a>
+      <a href="https://www.linkedin.com/in/suhaassrinivas/">
+      <span style="font-size: 2em;">
+        <i class="fab fa-linkedin"></i>
+      </span></a>
+  </div>
+</div>
