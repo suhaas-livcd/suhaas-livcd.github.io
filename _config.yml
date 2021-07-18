@@ -7,4 +7,5 @@ kramdown:
   syntax_highlighter: rouge
 permalink: /:categories/:slug
 plugins:
+  - jemoji
   - jekyll-sitemap
