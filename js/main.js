@@ -30,8 +30,17 @@ function randomInt(min, max) {
 
 window.onload = function () {
   setRandomBackground();
+  // // Addign code to set NAV tab current
+  // var pathname = window.location.pathname;
+  // Array.from(document.querySelectorAll(".random-color")).forEach(el => {
+  //   if (pathname.toUpperCase().indexOf(el.text.toUpperCase()) != -1)
+  //           el.classList.add("current");
+  // });
 }
 
 // if (Modernizr.csstransitions) {
 //   setInterval(randomizeNavColor, 10000);
 // }
+
+
+

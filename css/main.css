@@ -42,6 +42,21 @@ nav {
   align-items: center;
 }
 
+.nav-links .current{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  -webkit-transition: background-color 0s linear, color 0s linear;
+  transition: background-color 0s linear, color 0s linear;
+  font-weight: bolder;
+  background-color: var(--link-color_current);
+  padding: 2px;
+}
+
+.nav-links a{
+  color: var(--text-color);
+}
+
 .navbar-home {
   font-family: 'Courier', sans-serif;
   font-size: 24pt;
@@ -177,6 +192,7 @@ nav {
 #left-nav a {
   color: var(--text-color);
 }
+
 
 /* Hide sections when we're not in them. */
 #left-nav .not-current + ul {

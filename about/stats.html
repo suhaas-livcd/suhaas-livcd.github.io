@@ -21,7 +21,7 @@ td, th{
 <h1>Site Statistics</h1>
 <p id="duration-div"></p>
 
-<p><strong>wiki:</strong> <span id="wiki-count">Loading...</span></p>
+<p><strong>projects:</strong> <span id="projects-count">Loading...</span></p>
 <p><strong>Blogs:</strong> <span id="blog-count">Loading...</span></p>
 <p><strong>Gallery:</strong> <span id="gallery-count">Loading...</span></p>
 
@@ -153,7 +153,7 @@ fetch('/api/site.json')
 .then ( (posts) => {
   posts.sort(compareByDate);
 
-  let wikiCount = 0;
+  let projectsCount = 0;
   let blogCount = 0;
   let galleryCount = 0;
   let printedPagesCount = 0;
@@ -168,15 +168,15 @@ fetch('/api/site.json')
       return;	
     }
 
-    let wikiTooltip = createTooltip(post, 'wiki', wikiCount);
+    let projectsTooltip = createTooltip(post, 'projects', projectsCount);
     let blogTooltip = createTooltip(post, 'Blogs', blogCount);
     let galleryTooltip = createTooltip(post, 'Gallery', galleryCount);
 
     const category = post.categories[0];
 
-    if ('wiki' == category) {
-      wikiCount++;
-      wikiTooltip = createTooltip(post, 'wiki', wikiCount, true);
+    if ('projects' == category) {
+      projectsCount++;
+      projectsTooltip = createTooltip(post, 'projects', projectsCount, true);
     } else if ('blog' == category) {
       blogCount++;
       blogTooltip = createTooltip(post, 'Blogs', blogCount, true);
@@ -190,14 +190,14 @@ fetch('/api/site.json')
     printedPagesCount += post.printedPages;
     const printedPagesTooltip = createTooltip(post, 'Printed pages', printedPagesCount, true) + ' (' + post.printedPages + ')';
 
-    addDataRow(post.date, wikiCount, wikiTooltip, blogCount, blogTooltip, galleryCount, galleryTooltip, printedPagesCount, printedPagesTooltip);
+    addDataRow(post.date, projectsCount, projectsTooltip, blogCount, blogTooltip, galleryCount, galleryTooltip, printedPagesCount, printedPagesTooltip);
   });
 
   if (end) {
     const endTitle = '<strong>' + end + '</strong><br/>';
     addDataRow(end,
-        wikiCount,
-        endTitle + 'wiki: ' + wikiCount,
+        projectsCount,
+        endTitle + 'projects: ' + projectsCount,
         blogCount,
         endTitle + 'Blogs: ' + blogCount,
         galleryCount,
@@ -208,8 +208,8 @@ fetch('/api/site.json')
     const today = new Date().toISOString().substring(0, 10);
     const endTitle = '<strong>' + today + '</strong><br/>';
     addDataRow(today,
-        wikiCount,
-        endTitle + 'wiki: ' + wikiCount,
+        projectsCount,
+        endTitle + 'projects: ' + projectsCount,
         blogCount,
         endTitle + 'Blogs: ' + blogCount,
         galleryCount,
@@ -218,7 +218,7 @@ fetch('/api/site.json')
         endTitle + 'Printed pages: ' + printedPagesCount);
 	}
 
-  document.querySelector('#wiki-count').innerText = wikiCount;
+  document.querySelector('#projects-count').innerText = projectsCount;
   document.querySelector('#blog-count').innerText = blogCount;
   document.querySelector('#gallery-count').innerText = galleryCount;
   document.querySelector('#printed-pages-count').innerText = printedPagesCount;
@@ -231,10 +231,10 @@ fetch('/api/site.json')
   maybeDrawChart();
 });
 
-function addDataRow(date, wikiCount, wikiTooltip, blogCount, blogTooltip, galleryCount, galleryTooltip, printedPagesCount, printedPagesTooltip){
+function addDataRow(date, projectsCount, projectsTooltip, blogCount, blogTooltip, galleryCount, galleryTooltip, printedPagesCount, printedPagesTooltip){
 
-  if(wikiCount == 0){
-    wikiCount = null;	
+  if(projectsCount == 0){
+    projectsCount = null;	
   }
   if(blogCount == 0){
     blogCount = null;	
@@ -243,7 +243,7 @@ function addDataRow(date, wikiCount, wikiTooltip, blogCount, blogTooltip, galler
     galleryCount = null;	
   }
 	
-  const rowArray = [new Date(date), wikiCount, wikiTooltip, blogCount, blogTooltip, galleryCount, galleryTooltip];
+  const rowArray = [new Date(date), projectsCount, projectsTooltip, blogCount, blogTooltip, galleryCount, galleryTooltip];
 	postsChartDataArray.push(rowArray);
 
   const printedPagesRowArray = [new Date(date), printedPagesCount, printedPagesTooltip];
@@ -255,7 +255,7 @@ function createPrintedPagesTable(posts){
 
 	let tableHtml = '<table><tr><th>Post</th><th>Printed Pages</th></tr>';
 
-  for (let i = 0; i < posts.count; i++) {
+  for (let i = 0; i < 10; i++) {
     const post = posts[i];
     tableHtml += '<tr><td><a href="' + post.url + '">' + post.title + '</a></td>';
     tableHtml += '<td>' + post.printedPages + '</td></tr>'
@@ -269,7 +269,7 @@ function createPrintedPagesTable(posts){
 function drawPostsChart() {
   const data = new google.visualization.DataTable();
   data.addColumn('date', 'Date');
-  data.addColumn('number', 'wiki');
+  data.addColumn('number', 'projects');
   data.addColumn({type:'string', role:'tooltip', 'p': {'html': true} });
   data.addColumn('number', 'Blogs');
   data.addColumn({type:'string', role:'tooltip', 'p': {'html': true} });
