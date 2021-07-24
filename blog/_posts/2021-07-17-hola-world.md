@@ -1,8 +1,8 @@
 ---
 layout: blog-post
-title: "Holie World"
-slug: Holie-world
-meta-title: Holie World
+title: "Hola World"
+slug: Hola-world
+meta-title: Hola World
 meta-description: The first blog post on the new site!
 meta-image: /examples/processing/creating-functions/images/random-faces-2.png
 ---

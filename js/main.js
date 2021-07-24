@@ -28,40 +28,6 @@ function randomInt(min, max) {
   return Math.floor(min + Math.random() * (max - min));
 }
 
-function setRandomSocialLink() {
-  let href;
-  let src;
-  let alt;
-  const r = Math.random();
-  if (r < .2) {
-    alt = 'twitter';
-    href = 'https://twitter.com/KevinAWorkman';
-    class_ = '<i class="fab fa-twitter"></i>';
-  } else if (r < .4) {
-    alt = 'facebook';
-    href = 'http://www.facebook.com/HappyCoding.io';
-    class_ = '<i class="fab fa-facebook"></i>';
-  } else if (r < .6) {
-    alt = 'github';
-    href = 'https://github.com/KevinWorkman/HappyCoding';
-    class_ = '<i class="fab fa-github"></i>';
-  } else if (r < .8) {
-    alt = 'etsy';
-    href = 'https://www.etsy.com/shop/HappyCoding';
-    class_ = '<i class="fab fa-etsy"></i>';
-  } else {
-    alt = 'youtube';
-    href = 'https://youtube.com/kevinaworkman';
-    class_ = '<i class="fab fa-youtube"></i>';
-  }
-
-  const aElement = document.getElementById('social-nav-link');
-  const imgElement = document.getElementById('social-nav-img');
-
-  aElement.href = 'https://github.com/suhaas-livcd';//href;
-  imgElement.innerHTML = '<i class="fab fa-github"></i>';//class_;
-}
-
 window.onload = function () {
   setRandomBackground();
 }

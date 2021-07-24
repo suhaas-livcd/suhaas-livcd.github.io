@@ -1,14 +1,11 @@
 <div id="left-nav">
   <ul>
     <li>
-      {% include left-nav-link.html url="/wiki/" %}
-      <ul>
-        <li class="left-nav-section">
-          {% include left-nav-link.html url="/wiki/java/" %}
-          {% include left-nav-section.html
-          posts=site.categories.java subsection="wiki" %}
-        </li>
-      </ul>
+    <li class="left-nav-section">
+      {% include left-nav-link.html url="/projects/" %}
+      {% include left-nav-section.html
+      posts=site.categories.projects subsection="projects" %}
+    </li>
     </li>
     <li>
       <hr>

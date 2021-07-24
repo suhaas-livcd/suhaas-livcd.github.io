@@ -8,4 +8,3 @@ title: "Blog"
 <hr/>
 
 *Blog_1*
-

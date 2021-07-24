@@ -162,7 +162,20 @@ nav {
 #left-nav .current {
   font-weight: bolder;
   background-color: var(--link-color_current);
+  padding: 2px;
 
+}
+
+#left-nav ul ul .current{
+  font-weight: bolder;
+  background-color: #fff;
+  border-left: 2px solid #aaa;
+  padding-left: 5px;
+
+}
+
+#left-nav a {
+  color: var(--text-color);
 }
 
 /* Hide sections when we're not in them. */
@@ -273,10 +286,13 @@ code {
 }
 
 .wiki-link-box .thumbnail-image {
-  width:200px;
-  height:100px;
+  width:150px;
+  height:150px;
   max-width:100%;
   border: thin solid #323232;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .wiki-link-box a.title {

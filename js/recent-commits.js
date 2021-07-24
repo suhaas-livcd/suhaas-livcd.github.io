@@ -4,7 +4,7 @@
 async function buildRecentCommitsTable() {
   const commitsTable = document.getElementById('recent-commits-table');
   const commits = await (await 
-      fetch('https://api.github.com/repos/kevinworkman/happycoding/commits',
+      fetch('https://api.github.com/repos/suhaas-livcd/suhaas-livcd.github.io/commits/',
           {mode: 'no-cors'}))
       .json();
 
