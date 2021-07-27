@@ -10,14 +10,19 @@ meta-image: /projects/images/hosto.png
 
 ---
 ### Android
-Some anroid based projects
+Projects with Android, Kotlin
 <div class="thumbnail-link-container">
 {% include url-thumbnail.html url="/projects/hosto" %}
+{% include url-thumbnail.html url="/projects/tune-inn" %}
+<!-- {% include url-thumbnail.html url="/projects/project-karaoke" %} -->
+
 </div>
 
 ---
-### Java-Fx
-Some anroid based projects
+### Java
+Theese projects include JavaFx, java
 <div class="thumbnail-link-container">
-{% include url-thumbnail.html url="/projects/hosto" %}
+{% include url-thumbnail.html url="/projects/server-client-chat" %}
+{% include url-thumbnail.html url="/projects/refugee-rescue" %}
 </div>
+
