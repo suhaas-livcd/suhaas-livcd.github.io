@@ -1,12 +1,12 @@
 ---
 layout: wiki
 title: Server-Client Chat
-thumbnail: https://raw.githubusercontent.com/Hosteloha/LanBasedChat/master/screenshots/frankie_chat_howto.png
+thumbnail: https://raw.githubusercontent.com/Hosteloha/LanBasedChat/master/src/main/java/com/frankie_chat/app_icon.png
 tagline: Minimal Server-Client communication
 sort-key: 100
 meta-title: Project Server-Client Chat
 meta-description: This is a JAVA based chat application, which would work to the hosts connected through LAN.
-meta-image: https://raw.githubusercontent.com/Hosteloha/LanBasedChat/master/screenshots/frankie_chat_howto.png
+meta-image: https://raw.githubusercontent.com/Hosteloha/LanBasedChat/master/src/main/java/com/frankie_chat/app_icon.png
 tags: [projects, java, ipc-communication, server-client]
 disableComments: true
 ---
@@ -77,4 +77,4 @@ This is a JAVA based chat application, which would work to the hosts connected t
 For more info regrading JavaFx setup, please visit [JavaFX Setup Guide](https://openjfx.io/openjfx-docs/)
 
 
-## Next: [Page Link](/projects/refugee-rescue)
+## Next: [Refugee Rescue](/projects/refugee-rescue)

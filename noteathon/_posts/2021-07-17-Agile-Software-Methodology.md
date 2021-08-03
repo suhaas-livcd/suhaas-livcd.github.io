@@ -3,8 +3,8 @@ layout: blog-post
 title: "Agile Software Methodology"
 slug: Agile-Software-Methodology
 meta-title: Agile Software Methodology
-meta-description: The first blog post on the new site!
-meta-image: /examples/processing/creating-functions/images/random-faces-2.png
+meta-description: Demo or Die
+meta-image: https://thumbs.dreamstime.com/b/agile-icon-methodology-vector-development-scrum-flexible-software-logo-concept-206202942.jpg
 ---
 
 # Agile Software Methodology :running:
@@ -133,4 +133,4 @@ meta-image: /examples/processing/creating-functions/images/random-faces-2.png
 - **Triage and Feature freeze** : focuses the team's energy on finishing the critical tasks
 - **Target audience** - Who are bit mature in Agile or new organization or wants Scrum + Fluid movement, simply it is best practices of Scrum + Kanban
 
-## Next: [Page Link](/noteathon/Java-DS-Algo)
+## Next: [Java-DS-Algo](/noteathon/java-ds-algo)

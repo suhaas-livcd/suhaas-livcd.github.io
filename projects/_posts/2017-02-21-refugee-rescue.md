@@ -1,12 +1,12 @@
 ---
 layout: wiki
 title: Refugee Rescue
-thumbnail: https://raw.githubusercontent.com/suhaas-livcd/Refugees_rescue/master/refugee-getty.jpg
+thumbnail: https://media.istockphoto.com/vectors/refugee-migrant-family-vector-id928142034?k=6&m=928142034&s=612x612&w=0&h=lhxmdp_0qaC62M28ASXEMqz1755uhfl6MPuObTj0DZ8=
 tagline: A social platform for refugees
 sort-key: 100
 meta-title: Project Refugee Rescue
 meta-description: Help refugees to connect the outer world and get support for their physical as well   as mental need.
-meta-image: https://raw.githubusercontent.com/suhaas-livcd/Refugees_rescue/master/refugee-getty.jpg
+meta-image: https://media.istockphoto.com/vectors/refugee-migrant-family-vector-id928142034?k=6&m=928142034&s=612x612&w=0&h=lhxmdp_0qaC62M28ASXEMqz1755uhfl6MPuObTj0DZ8=
 tags: [projects, android, Refugees, Rescue]
 disableComments: true
 ---
@@ -44,4 +44,4 @@ disableComments: true
   ![volunteer_dash](https://raw.githubusercontent.com/suhaas-livcd/Refugees_rescue/master/ProjectScreenshots/volunteer_dash.png)
 
   
-## Next: [Page Link](/projects/project-karaoke)
+## Next: [Project Karaoke](/projects/project-karaoke)

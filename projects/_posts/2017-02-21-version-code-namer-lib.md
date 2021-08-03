@@ -54,4 +54,4 @@ implementation 'com.github.suhaas-livcd:VersionCodeNamerLibrary:1.0.1'
 * [Alphabetizer](https://alphabetizer.flap.tv/lists/)
 
 
-## Next: [Page Link](/projects/tune-inn)
+## Next: [TuneINN](/projects/tune-inn)
