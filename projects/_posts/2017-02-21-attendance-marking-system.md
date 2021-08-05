@@ -11,17 +11,13 @@ tags: [projects, android, karunya]
 disableComments: true
 ---
 
-{% include toc.md %}
+<div markdown="span" class="alert alert-danger" role="alert"><i class="fa fa-info-circle"></i> <b>Sorry</b> the project page is still not yet ported :construction:</div>
 
-Project 
+Please checkout other project pages below
 
-## Download the JDK
-
-Since you'll be writing code, you need to download the Java Development Kit, aka the JDK. Go [here]()
-
-## Tasks
-
-- Explain in your own words what the `PATH` variable is.
-- Practice using the command prompt by navigating around your file system using it. What programs can you run from the command prompt?
-
-## Next: [Page Link](/projects/hosto)
+{% include url-thumbnail.html url="/projects/hosto" %}
+{% include url-thumbnail.html url="/projects/project-karaoke" %}
+{% include url-thumbnail.html url="/projects/version-code-namer-lib" %}
+{% include url-thumbnail.html url="/projects/tune-inn" %}
+{% include url-thumbnail.html url="/projects/server-client-chat" %}
+{% include url-thumbnail.html url="/projects/refugee-rescue" %}
