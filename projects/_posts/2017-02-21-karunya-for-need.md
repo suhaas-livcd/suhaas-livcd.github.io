@@ -22,3 +22,4 @@ Please checkout other project pages below
 {% include url-thumbnail.html url="/projects/server-client-chat" %}
 {% include url-thumbnail.html url="/projects/refugee-rescue" %}
 {% include url-thumbnail.html url="/projects/nss-transcedence" %}
+{% include url-thumbnail.html url="/projects/dear-shelly" %}
