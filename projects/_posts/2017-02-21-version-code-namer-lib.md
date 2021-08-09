@@ -1,12 +1,12 @@
 ---
 layout: wiki
 title: Version Code Namer
-thumbnail: /screenShots/ReadMeVersionCodeNamer.png
-tagline: Stop worrying about version naming!!!
+thumbnail: /projects/images/versioncodelib_thumbnail.svg
+tagline: Thinking name for next release ?
 sort-key: 99
-meta-title: Project Version Code Namer
+meta-title: Version Code Namer
 meta-description: library to deal automatic naming of the versions in a systematic and organised way with the version names.
-meta-image: /screenShots/ReadMeVersionCodeNamer.png
+meta-image: /projects/images/versioncodelib_thumbnail.svg
 tags: [projects, java, gradle, automatic-namer]
 disableComments: true
 ---

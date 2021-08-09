@@ -2,10 +2,10 @@
 layout: wiki
 title: Dear Shelly
 thumbnail: /projects/images/dear_shelly/dshelly_thumbnail.png 
-tagline: Yet another sharing app, but with a punch!!!
+tagline: productivity tool to log your work
 sort-key: 100
 meta-title: Project Shelly
-meta-description: In-Progress a beautiful application
+meta-description: is productivity tool - economical personal assitant
 meta-image: /projects/images/dear_shelly/dshelly_thumbnail.png
 tags: [projects, javafx, productivity]
 disableComments: true

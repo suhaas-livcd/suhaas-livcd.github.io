@@ -1,12 +1,12 @@
 ---
 layout: wiki
 title: KarunyaForNeed
-thumbnail: /projects/images/hosto.png
+thumbnail: /projects/images/kfn/kfn_landing.png
 tagline: Yet another sharing app, but with a punch!!!
 sort-key: 100
-meta-title: Project KFN
+meta-title: Project KarunyaForNeed KFN
 meta-description: In-Progress a beautiful application
-meta-image: /projects/images/hosto.png
+meta-image: /projects/images/kfn/kfn_landing.png
 tags: [projects, php, kfn]
 disableComments: true
 ---

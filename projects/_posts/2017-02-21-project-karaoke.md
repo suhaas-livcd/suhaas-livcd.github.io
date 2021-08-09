@@ -2,7 +2,7 @@
 layout: wiki
 title: Project Karaoke 
 thumbnail: /projects/images/project_karaoke_thumbnail.svg
-tagline: Yet another sharing app, but with a punch!!!
+tagline: Fun On-The-Go
 sort-key: 100
 meta-title: Karaoke On-The-Go
 meta-description: Carpool Karaoke

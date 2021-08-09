@@ -1,12 +1,12 @@
 ---
 layout: wiki
 title: Attendance Marking System
-thumbnail: /projects/images/hosto.png
-tagline: Yet another sharing app, but with a punch!!!
+thumbnail: /projects/images/ats/ats_thumbnail.svg
+tagline: Digital India transformation in universities
 sort-key: 100
-meta-title: Project A.M.S
-meta-description: In-Progress a beautiful application
-meta-image: /projects/images/hosto.png
+meta-title: Attendance Marking System
+meta-description: to convert the traditional paper-based attendance logs to a digitalised central system.
+meta-image: /projects/images/ats/ats_thumbnail.svg
 tags: [projects, android, karunya]
 disableComments: true
 ---
