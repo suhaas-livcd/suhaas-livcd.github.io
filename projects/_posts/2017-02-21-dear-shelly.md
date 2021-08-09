@@ -7,7 +7,7 @@ sort-key: 100
 meta-title: Project Shelly
 meta-description: In-Progress a beautiful application
 meta-image: /projects/images/dear_shelly/dshelly_thumbnail.png
-tags: [projects, android, hosto]
+tags: [projects, javafx, productivity]
 disableComments: true
 ---
 
