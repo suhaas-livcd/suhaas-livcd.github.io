@@ -7,13 +7,22 @@
   --border-color:#cccccc;
   --hover-color:#232929;
 }
+
+@font-face {
+  font-family: 'CourierPrime';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/courier_prime/CourierPrime-Regular.ttf');
+  -webkit-font-smoothing: aliased;
+  font-smooth: never;
+}
+
 body {
   margin: 10px;
   font-family: 'Courier', sans-serif;
   color: var(--text-color);
   background-image: none;
   background-color: var(--body-color);
-  transition: background-image 1s linear;
 }
 
 .container {
