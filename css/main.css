@@ -10,6 +10,7 @@
 
 body {
   margin: 10px;
+  font-family: 'Courier', monospace;
   color: var(--text-color);
   background-image: none;
   background-color: var(--body-color);
@@ -57,6 +58,7 @@ nav {
 }
 
 .navbar-home {
+  font-family: 'Courier', monospace;
   font-size: 24pt;
   padding: 10px;
   flex-shrink: 0;
@@ -70,6 +72,7 @@ nav {
 }
 
 .nav-link {
+  font-family: "Courier", Courier, monospace;
   font-size: 16pt;
   padding: 10px;
   -webkit-transition: background-color 10s linear, color 10s linear;
