@@ -1,7 +1,7 @@
 :root {
   --link-color:rgb(0, 81, 255);
   --link-color_current:rgba(0, 81, 255, 0.1);
-  --text-color:#131313;
+  --text-color:#363638;
   --body-color:#f1f1f1;
   --content-color:#fefefe;
   --border-color:#cccccc;
@@ -10,7 +10,8 @@
 
 body {
   margin: 10px;
-  font-family: 'Courier', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   color: var(--text-color);
   background-image: none;
   background-color: var(--body-color);
@@ -58,13 +59,12 @@ nav {
 }
 
 .navbar-home {
-  font-family: 'Courier', sans-serif;
-  font-size: 24pt;
+  font-family: 'Roboto', sans-serif;
   padding: 10px;
   flex-shrink: 0;
   font-size: 35px;
   letter-spacing: 1.2px;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
   font-style: normal;
   font-variant: small-caps;
@@ -72,11 +72,10 @@ nav {
 }
 
 .nav-link {
-  font-family: "Courier", Courier, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
   font-size: 16pt;
   padding: 10px;
-  -webkit-transition: background-color 10s linear, color 10s linear;
-  transition: background-color 10s linear, color 10s linear;
 }
 
 #social-nav-link {
