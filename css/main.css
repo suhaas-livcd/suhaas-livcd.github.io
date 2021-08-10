@@ -8,18 +8,8 @@
   --hover-color:#232929;
 }
 
-@font-face {
-  font-family: 'CourierPrime';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/courier_prime/CourierPrime-Regular.ttf');
-  -webkit-font-smoothing: aliased;
-  font-smooth: never;
-}
-
 body {
   margin: 10px;
-  font-family: 'Courier', sans-serif;
   color: var(--text-color);
   background-image: none;
   background-color: var(--body-color);
@@ -67,11 +57,9 @@ nav {
 }
 
 .navbar-home {
-  font-family: 'Courier', sans-serif;
   font-size: 24pt;
   padding: 10px;
   flex-shrink: 0;
-  font-family: "Courier New", Courier, monospace;
   font-size: 35px;
   letter-spacing: 1.2px;
   font-weight: bold;
@@ -82,7 +70,6 @@ nav {
 }
 
 .nav-link {
-  font-family: "Courier", Courier, sans-serif;
   font-size: 16pt;
   padding: 10px;
   -webkit-transition: background-color 10s linear, color 10s linear;

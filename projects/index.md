@@ -10,7 +10,7 @@ meta-image: /projects/images/hosto.png
 
 ---
 ### Android <i class="fab fa-android fa-lg"></i>
-Projects with Android, Kotlin
+Developed using Android, Kotlin
 <div class="thumbnail-link-container">
 {% include url-thumbnail.html url="/projects/hosto" %}
 {% include url-thumbnail.html url="/projects/project-karaoke" %}
@@ -22,7 +22,7 @@ Projects with Android, Kotlin
 
 ---
 ### Java <i class="fab fa-java fa-lg"></i>
-Theese projects include JavaFx, java
+Developed using JavaFx, java
 <div class="thumbnail-link-container">
 {% include url-thumbnail.html url="/projects/dear-shelly" %}
 {% include url-thumbnail.html url="/projects/server-client-chat" %}
@@ -31,7 +31,7 @@ Theese projects include JavaFx, java
 
 ---
 ### HTML <i class="fab fa-html5 fa-lg"></i>, CSS <i class="fab fa-css3 fa-lg"></i> |  <i class="fab fa-js fa-lg"></i> | <i class="fab fa-php fa-lg"></i>
-Theese projects were developed using Html5, CSS3, JS, PHP, Bootstrap and some 3rd party APIs
+Developed using Html5, CSS3, JS, PHP, Bootstrap and some 3rd party APIs
 <div class="thumbnail-link-container">
 {% include url-thumbnail.html url="/projects/refugee-rescue" %}
 {% include url-thumbnail.html url="/projects/karunya-for-need" %}
