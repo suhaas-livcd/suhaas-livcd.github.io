@@ -5,4 +5,8 @@ title: "RandomNoise"
 
 **Random**
 <hr/>
-Let's make some NOISE :rock:
+Hey Audiophiles 🎧 and guitarists 🎸,
+
+In Progress plans
+- Creating content on guitar useful resources 
+- Creating playlist and chill beats while working

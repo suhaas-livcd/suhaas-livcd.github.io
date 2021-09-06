@@ -3,7 +3,7 @@ layout: wiki
 title: Project Karaoke 
 thumbnail: /projects/images/project_karaoke_thumbnail.svg
 tagline: Fun On-The-Go
-sort-key: 100
+sort-key: 3
 meta-title: Karaoke On-The-Go
 meta-description: Carpool Karaoke
 meta-image: /projects/images/project_karaoke_thumbnail.svg
@@ -16,7 +16,7 @@ disableComments: true
 {% include toc.md %}
 
 ## ProjectKaraoke
-<img src="https://img.shields.io/badge/in--progress-code--not--updated-yellow">
+[![KARAOKE_GITHUB](https://img.shields.io/badge/<&nbsp;>&nbsp;Code-Github-black)](https://github.com/suhaas-livcd/ProjectKaraoke)
 
 [Karaoke](https://en.wikipedia.org/wiki/Karaoke), is a form of entertainment, offered typically by bars and clubs, in which people take turns to sing popular songs into a microphone over pre-recorded backing tracks.
 When the user plays a track, we will show a special **"KARAOKE_MODE"**, when clicked will reduce the vocals and empasize more on the instrumental part along with displaying the lyrics.
@@ -34,7 +34,5 @@ The challenges here :
 ## Architecture flow
 
 <img src="/projects/images/project_karaoke_arch.svg" align="center" title="MainScreen"> 
-
-## [Karaoke - SourceCode](https://github.com/suhaas-livcd/ProjectKaraoke)
 
 ## Next: [Server-Client Chat](/projects/server-client-chat)

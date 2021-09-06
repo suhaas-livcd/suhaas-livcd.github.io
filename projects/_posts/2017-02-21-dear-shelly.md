@@ -3,7 +3,7 @@ layout: wiki
 title: Dear Shelly
 thumbnail: /projects/images/dear_shelly/dshelly_thumbnail.png 
 tagline: productivity tool to log your work
-sort-key: 100
+sort-key: 4
 meta-title: Project Shelly
 meta-description: is productivity tool - economical personal assitant
 meta-image: /projects/images/dear_shelly/dshelly_thumbnail.png
@@ -13,10 +13,12 @@ disableComments: true
 
 {% include toc.md %}
 
+[![DEARSHELLY_GITHUB](https://img.shields.io/badge/<&nbsp;>&nbsp;Code-Github-black)](https://github.com/suhaas-livcd/MyDailyScripts/tree/master/JavaFx)
+
 **Dear Shelly** is productivity tool - economical personal assitant and it has helped me a lot in my journey. I wanted my days to be logged, which helps while you retrospect yourself. Either you can maintain a physical diary or something digital like this. I also use Google Calendar, to create tasks, which is synced across all the devices.
 
 ## Releases
-There are 3 version that I created,
+There are 3 version that I created
 
 | Name | About |
 | :---   | :--- |
@@ -88,3 +90,8 @@ CURRENT_MONTH="`date "+%b"`"               #Aug
 CURRENT_YEAR="`date "+%Y"`"                #2017
 echo $CURRENT_YEAR
 ```
+
+## < > Code
+- [*Dear Shelly - My Day*](https://github.com/suhaas-livcd/MyDailyScripts/tree/master/DearShelly)
+- [*ShellyInPie*](https://github.com/suhaas-livcd/PychieWorks/tree/master/ShellyInPy/main)
+- [*ShellyFx - Make Your Day Count*](https://github.com/suhaas-livcd/MyDailyScripts/tree/master/JavaFx)

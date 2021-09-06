@@ -3,7 +3,7 @@ layout: wiki
 title: Server-Client Chat
 thumbnail: https://raw.githubusercontent.com/Hosteloha/LanBasedChat/master/src/main/java/com/frankie_chat/app_icon.png
 tagline: LAN based chatting application
-sort-key: 100
+sort-key: 5
 meta-title: Project Server-Client Chat
 meta-description: This is a JAVA based chat application, which would work to the hosts connected through LAN.
 meta-image: https://raw.githubusercontent.com/Hosteloha/LanBasedChat/master/src/main/java/com/frankie_chat/app_icon.png
@@ -12,6 +12,8 @@ disableComments: true
 ---
 
 {% include toc.md %}
+[![SERVER_CLIENT_COMM_GITHUB](https://img.shields.io/badge/<&nbsp;>&nbsp;Code-Github-black)](https://github.com/Hosteloha/LanBasedChat)
+
 # Server-Client Communication
 This is a JAVA based chat application, which would work to the hosts connected through LAN.
 

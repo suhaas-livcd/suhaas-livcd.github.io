@@ -3,7 +3,7 @@ layout: wiki
 title: Version Code Namer
 thumbnail: /projects/images/versioncodelib_thumbnail.svg
 tagline: Thinking name for next release ?
-sort-key: 99
+sort-key: 8
 meta-title: Version Code Namer
 meta-description: library to deal automatic naming of the versions in a systematic and organised way with the version names.
 meta-image: /projects/images/versioncodelib_thumbnail.svg
@@ -12,12 +12,12 @@ disableComments: true
 ---
 
 {% include toc.md %}
+[![](https://jitpack.io/v/suhaas-livcd/VersionCodeNamerLibrary.svg)](https://jitpack.io/#suhaas-livcd/VersionCodeNamerLibrary) [![VERSIONCODE_GITHUB](https://img.shields.io/badge/<&nbsp;>&nbsp;Code-Github-black)](https://github.com/suhaas-livcd/VersionCodeNamerLibrary)  
+
+## What is it ?
 
 <img src="/screenShots/ReadMeVersionCodeNamer.png" align="center" title="example use of library" width="818" height="415">
 
-[![](https://jitpack.io/v/suhaas-livcd/VersionCodeNamerLibrary.svg)](https://jitpack.io/#suhaas-livcd/VersionCodeNamerLibrary)
-
-## What is it ?
 > VersionCodeNamer is a library to deal automatic naming of the versions in a systematic and organised way with the version names.
 - Have you ever wondered what should be the next **Version name** of your app release ?
 - Should it be my favourite desert **Pastel de nata**, a large glacier **vatnajökull** or **foo** whatever something.

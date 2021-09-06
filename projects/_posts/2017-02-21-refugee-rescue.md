@@ -3,7 +3,7 @@ layout: wiki
 title: Refugee Rescue
 thumbnail: /projects/images/refugee_rescue_thumbnail.jpg
 tagline: <a href="https://devpost.com/software/refugees_rescue"> MLH HackUPC Winter 2017 :trophy:</a> A social platform for refugees
-sort-key: 100
+sort-key: 2
 meta-title: Project Refugee Rescue
 meta-description: Help refugees to connect the outer world and get support for their physical as well   as mental need.
 meta-image: /projects/images/refugee_rescue_thumbnail.jpg
@@ -13,13 +13,15 @@ disableComments: true
 
 {% include toc.md %}
 
-![Refugees](https://raw.githubusercontent.com/suhaas-livcd/Refugees_rescue/master/refugee-getty.jpg)
-
+[![REFUGEES_GITHUB](https://img.shields.io/badge/<&nbsp;>&nbsp;Code-Github-black)](https://github.com/suhaas-livcd/Refugees_rescue)
 ## Winner :trophy:
 - [DEVPOST](https://devpost.com/software/refugees_rescue) - nominated in the top 6 projects - 500 hackers & 36 hours, held at [Polytechnic University of Catalonia (UPC)](https://www.upc.edu/en) - Barcelona, Spain
 - **Signaturit Challenge**: Best use of [Signaturit](https://www.signaturit.com) API in the project
 
 ## About
+
+![Refugees](https://raw.githubusercontent.com/suhaas-livcd/Refugees_rescue/master/refugee-getty.jpg)
+
   [Refugee Rescue](https://github.com/suhaas-livcd/Refugees_rescue) is `Web application` for which would help refugees to connect the outer world and get support for their physical as well   as mental need. One of the biggest challenges in today's scenario is to take care and consideration of refugees to our society. Although there have been so many social sites which give plenty of information but not in process of connecting as people suffer through pyschological pain of need 
   - someone to share time
   - someone to provide shelter

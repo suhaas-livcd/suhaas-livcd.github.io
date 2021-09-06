@@ -3,7 +3,7 @@ layout: wiki
 title: NSS Transcendence
 thumbnail: /projects/images/transcendence/1_trans_thumbnail.png
 tagline: Simple responsive website for competitions
-sort-key: 100
+sort-key: 10
 meta-title: Project NSS Transcendence
 meta-description: A project of National Service Scheme (NSS)
 meta-image: /projects/images/transcendence/1_trans_thumbnail.png
@@ -12,12 +12,12 @@ disableComments: true
 ---
 
 {% include toc.md %}
-
+[![NSS_TRANS_PAGES](https://img.shields.io/badge/NSS_Transcendence2k17-Pages-success??style=plastic&logo=github)](https://suhaas-livcd.github.io/NSS-Transcedence-1617/) [![NSS_TRANS_GITHUB](https://img.shields.io/badge/<&nbsp;>&nbsp;Code-Github-black)](https://github.com/suhaas-livcd/NSS-Transcedence-1617)
 ## Transcendence2K17
 
 <img src="/projects/images/transcendence/1_trans_thumbnail.png" align="center" title="MainScreen" width="200" height="200"> :link:  <img src="/projects/images/transcendence/2_trans_nsslogo.png" align="center" title="MainScreen" width="150" height="150">  :link: <img src="/projects/images/transcendence/3_trans_unilogo.png" align="center" title="MainScreen" width="150" height="150">
 
-[![Hosto_playStore](https://img.shields.io/badge/Pages_LIVE-NSS_Transcendence2k17-black??style=plastic&logo=github)](https://suhaas-livcd.github.io/NSS-Transcedence-1617/)
+
 
 [Transcendence](https://suhaas-livcd.github.io/NSS-Transcedence-1617/) is a mega event organised by [Karunya University](http://www.karunya.edu/) as a part of [National Service Scheme (NSS)](https://nss.gov.in) activity. Children from nearby schools participate where there are around 2 age groups and 20 events. This provides young students a platform to show case their professional skills and to discover their hidden talents in a competitive spirit.
 
