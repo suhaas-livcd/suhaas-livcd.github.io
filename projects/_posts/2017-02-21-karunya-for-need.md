@@ -3,7 +3,7 @@ layout: wiki
 title: KarunyaForNeed
 thumbnail: /projects/images/kfn/kfn_landing.png
 tagline: Yet another sharing app, but with a punch!!!
-sort-key: 100
+sort-key: 9
 meta-title: Project KarunyaForNeed KFN
 meta-description: In-Progress a beautiful application
 meta-image: /projects/images/kfn/kfn_landing.png
@@ -13,8 +13,10 @@ disableComments: true
 
 {% include toc.md %}
 
+[![KFN_PAGES](https://img.shields.io/badge/KarunyaForNeed-Pages-success??style=plastic&logo=github)](https://suhaas-livcd.github.io/KarunyaForNeed/) [![KFN_GITHUB](https://img.shields.io/badge/<&nbsp;>&nbsp;Code-Github-black)](https://github.com/suhaas-livcd/KarunyaForNeed)
+
 ## About
-An internal online hosting platform for students in the university to exchange and bid for goods and was carried out in collaboration with the partner company [Octalian](https://www.octalian.in).
+[KarunyaForNeed(KFN)](https://suhaas-livcd.github.io/KarunyaForNeed/) is an internal online hosting platform for students in the university to exchange and bid for goods and was carried out in collaboration with the partner company [Octalian](https://www.octalian.in).
 
 <img src="/projects/images/kfn/kfn_landing.png" align="center" title="MainScreen">
 
@@ -44,5 +46,10 @@ Based on a poll of students we took, we finalised some categories that were most
 | *Project* | to collaborate with projects, finding partner or to sell finished projects|
 
 <img src="/projects/images/kfn/kfn_categories.png" align="center" title="MainScreen">
+
+## Source Code
+- This source is the base code developed in PHP without laravel framework.
+- DB scripts to be run on mysql or mariadb.
+- Please find the source code at [link](https://github.com/suhaas-livcd/KarunyaForNeed)
 
 ## Next: [Hosto](/projects/hosto)

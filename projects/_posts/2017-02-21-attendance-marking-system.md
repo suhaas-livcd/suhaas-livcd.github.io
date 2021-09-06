@@ -3,7 +3,7 @@ layout: wiki
 title: Attendance Marking System
 thumbnail: /projects/images/ats/ats_thumbnail.svg
 tagline: Digital India transformation in universities
-sort-key: 100
+sort-key: 11
 meta-title: Attendance Marking System
 meta-description: to convert the traditional paper-based attendance logs to a digitalised central system.
 meta-image: /projects/images/ats/ats_thumbnail.svg
@@ -13,6 +13,7 @@ disableComments: true
 
 {% include toc.md %}
 
+[![ATS_GITHUB](https://img.shields.io/badge/<&nbsp;>&nbsp;Code-Github-black)](https://github.com/suhaas-livcd/AttendanceMarkingSystem)
 ## About
 [Attendance Marking System (ATS)](https://github.com/suhaas-livcd/AttendanceMarkingSystem) was a support project that I was working for my friends for a very short time (perhaps 2 weeks). Initially, the stack was in ANDROID-PHP, later they deceided to move to [Apache CORDOVA](https://cordova.apache.org) because of initial cost setup and short timeline alloted for deployment reasons. After that ATS was orphaned, but I like this project thought subsumed under the theme [Digital India](https://www.digitalindia.gov.in) - to convert the traditional paper-based attendance logs to a digitalised central system.
 

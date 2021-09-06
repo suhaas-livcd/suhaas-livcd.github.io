@@ -9,6 +9,15 @@ meta-image: /projects/images/hosto.png
 # Projects Main Page
 
 ---
+### Highlights 🤩 🌟
+Developed using Android, Kotlin
+<div class="thumbnail-link-container">
+{% include url-thumbnail.html url="/projects/refugee-rescue" %}
+{% include url-thumbnail.html url="/projects/hosto" %}
+{% include url-thumbnail.html url="/projects/dear-shelly" %}
+
+
+</div>
 ### Android <i class="fab fa-android fa-lg"></i>
 Developed using Android, Kotlin
 <div class="thumbnail-link-container">
