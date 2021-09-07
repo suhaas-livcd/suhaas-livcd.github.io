@@ -19,11 +19,14 @@ td, th{
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <h1>Site Statistics</h1>
+<p>⚠️ The graphs are stacked up because of incorrect date format by {post.date} . Working on it.
+   Will fix by SEPT 30 2021</p>
+
 <p id="duration-div"></p>
 
 <p><strong>projects:</strong> <span id="projects-count">Loading...</span></p>
 <p><strong>Blogs:</strong> <span id="blog-count">Loading...</span></p>
-<p><strong>Gallery:</strong> <span id="gallery-count">Loading...</span></p>
+<p><strong>Noteathon:</strong> <span id="gallery-count">Loading...</span></p>
 
 <hr/>
 
@@ -35,7 +38,7 @@ td, th{
 
 <h2>Printed Pages</h2>
 
-<p>This is a <strong>very</strong> rough estimate of how many pages it would take to print the site out. It (incorrectly) assumes that a line is 150 characters long and a page is 66 lines. It doesn't count images or embedded CodePens.</p>
+<p> ⚠️ This is a <strong>very</strong> rough estimate of how many pages it would take to print the site out. It (incorrectly) assumes that a line is 150 characters long and a page is 66 lines. It doesn't count images or embedded CodePens.</p>
 
 <p><strong>Printed pages:</strong> <span id="printed-pages-count">Loading...</span></p>
 
@@ -48,7 +51,6 @@ td, th{
 <div id="printed-pages-table-div"></div>
 
 <script>
-
 let dataLoaded = false;
 let libraryLoaded = false;
 const postsChartDataArray = [];
@@ -151,6 +153,7 @@ google.charts.setOnLoadCallback(() => {
 fetch('/api/site.json')
 .then( response => response.json())
 .then ( (posts) => {
+  console.log(posts)
   posts.sort(compareByDate);
 
   let projectsCount = 0;
@@ -180,7 +183,7 @@ fetch('/api/site.json')
     } else if ('blog' == category) {
       blogCount++;
       blogTooltip = createTooltip(post, 'Blogs', blogCount, true);
-		} else if ('gallery' == category) {
+		} else if ('noteathon' == category) {
       galleryCount++;
       galleryTooltip = createTooltip(post, 'Gallery', galleryCount, true);
 		} else {
@@ -189,7 +192,6 @@ fetch('/api/site.json')
 		
     printedPagesCount += post.printedPages;
     const printedPagesTooltip = createTooltip(post, 'Printed pages', printedPagesCount, true) + ' (' + post.printedPages + ')';
-
     addDataRow(post.date, projectsCount, projectsTooltip, blogCount, blogTooltip, galleryCount, galleryTooltip, printedPagesCount, printedPagesTooltip);
   });
 
@@ -201,7 +203,7 @@ fetch('/api/site.json')
         blogCount,
         endTitle + 'Blogs: ' + blogCount,
         galleryCount,
-        endTitle + 'Gallery: ' + galleryCount,
+        endTitle + 'Noteathon: ' + galleryCount,
         printedPagesCount,
         endTitle + 'Printed pages: ' + printedPagesCount);
 	} else {
@@ -213,7 +215,7 @@ fetch('/api/site.json')
         blogCount,
         endTitle + 'Blogs: ' + blogCount,
         galleryCount,
-        endTitle + 'Gallery: ' + galleryCount,
+        endTitle + 'Noteathon: ' + galleryCount,
         printedPagesCount,
         endTitle + 'Printed pages: ' + printedPagesCount);
 	}
@@ -242,7 +244,7 @@ function addDataRow(date, projectsCount, projectsTooltip, blogCount, blogTooltip
   if(galleryCount == 0){
     galleryCount = null;	
   }
-	
+
   const rowArray = [new Date(date), projectsCount, projectsTooltip, blogCount, blogTooltip, galleryCount, galleryTooltip];
 	postsChartDataArray.push(rowArray);
 
@@ -273,11 +275,11 @@ function drawPostsChart() {
   data.addColumn({type:'string', role:'tooltip', 'p': {'html': true} });
   data.addColumn('number', 'Blogs');
   data.addColumn({type:'string', role:'tooltip', 'p': {'html': true} });
-  data.addColumn('number', 'Gallery');
+  data.addColumn('number', 'Noteathon');
   data.addColumn({type:'string', role:'tooltip', 'p': {'html': true} });
   data.addRows(postsChartDataArray);
 
-  const options = {isStacked: true, tooltip: {isHtml: true}, height:500};
+  const options = {isStacked: false, tooltip: {isHtml: true}, height:500};
   const chart = new google.visualization.AreaChart(document.getElementById('posts-chart-div'));
   chart.draw(data, options);
 }
@@ -289,7 +291,7 @@ function drawPrintedPagesChart() {
   data.addColumn({type:'string', role:'tooltip', 'p': {'html': true} });
   data.addRows(printedPagesChartDataArray);
 
-  const options = {isStacked: true, tooltip: {isHtml: true}, height:500};
+  const options = {isStacked: false, tooltip: {isHtml: true}, height:500};
   const chart = new google.visualization.AreaChart(document.getElementById('printed-pages-chart-div'));
   chart.draw(data, options);
 }

@@ -2,7 +2,7 @@
 layout: wiki
 title: Refugee Rescue
 thumbnail: /projects/images/refugee_rescue_thumbnail.jpg
-tagline: <a href="https://devpost.com/software/refugees_rescue"> MLH HackUPC Winter 2017 :trophy:</a> A social platform for refugees
+tagline:  🏆 MLH HackUPC Winter 2017 Winner - Social platform for Refugees
 sort-key: 2
 meta-title: Project Refugee Rescue
 meta-description: Help refugees to connect the outer world and get support for their physical as well   as mental need.

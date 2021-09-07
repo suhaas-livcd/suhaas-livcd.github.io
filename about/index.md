@@ -42,5 +42,11 @@ You can try to post on [Discord forum](https://suhaas-livcd.github.io/forum/) or
 
 <hr/>
 
+## WebSite Credits & References?
+- [Happy Coding](https://happycoding.io) by **Kevin Workman**
+- [Jekyll Docs](https://jekyllrb.com/docs/)
+
+<hr/>
+
 ## Got any site stats? 
 [Yep!](/about/stats) its building up 💪

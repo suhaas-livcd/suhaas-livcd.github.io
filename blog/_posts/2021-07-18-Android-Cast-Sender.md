@@ -3,8 +3,8 @@ layout: blog-post
 title: "Android Cast Sender"
 slug: Android-Cast-Sender
 meta-title: Android Cast Sender
-meta-description: The first blog post on the new site!
-meta-image: /examples/processing/creating-functions/images/random-faces-2.png
+meta-description: Casting Audio application 
+meta-image: /blog/images/blog_thumb_android_cast.svg
 ---
  [![KFN_GITHUB](https://img.shields.io/badge/<&nbsp;>&nbsp;Code-Github-black)](https://github.com/suhaas-livcd/AndroidCastSender)
 
