@@ -50,3 +50,6 @@ You can try to post on [Discord forum](https://suhaas-livcd.github.io/forum/) or
 
 ## Got any site stats? 
 [Yep!](/about/stats) its building up 💪
+
+## CREDITS for resources
+- Images : [Caio Silva](https://unsplash.com/@caiohenriquesilva)
