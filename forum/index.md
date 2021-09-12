@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "About"
+title: "Forum"
 ---
 
 ## <i class="fa fa-comments fa-lg"></i> Forum

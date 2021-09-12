@@ -8,7 +8,7 @@
     </li>
     </li>
     <li>
-      <hr>
+      <hr style="border:1.5px solid #BEBEBE"> </hr>
     </li>
     <li class="left-nav-section">
       {% include left-nav-link.html url="/blog/" %}
@@ -16,7 +16,7 @@
       posts=site.categories.blog subsection="blog" %}
     </li>
     <li>
-      <hr>
+      <hr style="border:1.25px solid #C8C8C8""> </hr>
     </li>
     <li class="left-nav-section">
       {% include left-nav-link.html url="/noteathon/" %}
@@ -24,7 +24,7 @@
       posts=site.categories.noteathon subsection="noteathon" %}
     </li>
     <li>
-      <hr>
+      <hr style="border:1.0px solid #D3D3D3""> </hr>
     </li>
     <li class="left-nav-section">
       {% include left-nav-link.html url="/randomnoise/" %}
@@ -32,9 +32,17 @@
       posts=site.categories.randomnoise subsection="randomnoise" %}
     </li>
     <li>
-      <hr>
+      <hr style="border:0.75px solid #DCDCDC""> </hr>
     </li>
-    <li><a href="/forum/">Forum</a></li>
+    <li class="left-nav-section">
+      {% include left-nav-link.html url="/about/" %}
+    </li>
+    <li>
+      <hr style="border:0.5px solid #E8E8E8""> </hr>
+    </li>
+    <li class="left-nav-section">
+      {% include left-nav-link.html url="/forum/" %}
+    </li>
   </ul>
 
   <!-- <hr>
