@@ -75,3 +75,29 @@
   .alert-danger .alert-link {
     color: #843534;
   }
+  
+  .alert-light {
+    color: #636464;
+    background-color: #fefefe;
+    border-color: #fdfdfe;
+  }
+  .alert-light .alert-link {
+    color: #4f5050;
+  }
+  .alert-dark {
+    color: #141619;
+    background-color: #d3d3d4;
+    border-color: #bcbebf;
+  }
+  .alert-dark .alert-link {
+    color: #101214;
+  }
+
+  .alert-secondary {
+    color: #41464b;
+    background-color: #e2e3e5;
+    border-color: #d3d6d8;
+  }
+  .alert-secondary .alert-link {
+    color: #34383c;
+  }
