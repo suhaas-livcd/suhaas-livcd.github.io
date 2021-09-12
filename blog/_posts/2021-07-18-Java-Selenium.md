@@ -3,12 +3,16 @@ layout: blog-post
 title: "Java Selenium"
 slug: Java-Selenium
 meta-title: Java Selenium
-meta-description: The first blog post on the new site!
-meta-image: /examples/processing/creating-functions/images/random-faces-2.png
-published: false
+meta-description: Best way to automate Web
+meta-image: /blog/images/blog_selenium_thumb.svg
+published: true
 ---
 
-# Java Selenium
+<img src="/blog/images/blog_selenium_thumb.svg" align="center" title="MainScreen" width="100" height="100">
+
+{% include toc.md %}
+
+### An automation tool - Selenium
 [Selenium](https://www.selenium.dev) is a WebDriver that would support the automation of web browsers. Below is the internal architecture of working of selenium.
 
 <img src="/blog/images/blog_selenium_arch.svg" align="center" title="MainScreen">

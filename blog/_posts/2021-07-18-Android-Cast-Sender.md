@@ -6,11 +6,14 @@ meta-title: Android Cast Sender
 meta-description: Casting Audio application 
 meta-image: /blog/images/blog_thumb_android_cast.svg
 ---
+
+<img src="/blog/images/blog_thumb_android_cast.svg" align="center" title="MainScreen" width="100" height="100">
+
+{% include toc.md %}
+
  [![KFN_GITHUB](https://img.shields.io/badge/<&nbsp;>&nbsp;Code-Github-black)](https://github.com/suhaas-livcd/AndroidCastSender)
 
-# Android Cast Sender
-
-The **Sender** may be a phone or tablet running on Android or iOS, or it may be a laptop computer running Chrome. A sender application running on the sender device uses the **Google Cast API** for the appropriate platform to discover and communicate with the receiver application running on the receiver device.
+Here *Android Cast **Sender*** may be a phone or tablet running on Android or iOS, or it may be a laptop computer running Chrome. A sender application running on the sender device uses the **Google Cast API** for the appropriate platform to discover and communicate with the receiver application running on the receiver device.
 
 <img src="/blog/images/blog_androidcast_arch.svg" align="center" title="MainScreen">
 
