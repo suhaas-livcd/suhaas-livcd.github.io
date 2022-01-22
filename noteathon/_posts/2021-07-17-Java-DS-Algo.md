@@ -11,6 +11,8 @@ meta-image: https://upload.wikimedia.org/wikipedia/commons/7/7e/Comparison_compu
 
 {% include toc.md %}
 
+{% comment %} 
+<!-- Not including since it is generated in the table TOC-->
 Table of contents
 =================
 
@@ -26,6 +28,7 @@ Table of contents
       * [bubble_Sort](#bubble-sort)
   + [References](#references) -->
 <!--te-->
+{% endcomment %} 
 
 # Introduction
 - organises and store data
@@ -56,13 +59,9 @@ Table of contents
 - Time to retrieve is same, if we know the index of elem. Constant time complexity - which is always 3 steps - O(1)
 - Worst time complexity O(n)
 
-<details>
-  <summary>Arrays sample code </summary>
+<details><summary>Arrays sample code </summary><div markdown="1">
 
-
-<pre>
-package data_structures;
-
+```java
 public class Arrays_ {
     public static void main(String[] args) {
         int[] array_ = new int[2];
@@ -73,8 +72,9 @@ public class Arrays_ {
         }
     }
 }
-</pre>
+```
 
+</div>
 
 > O/P
 > Elem[0] : 1
@@ -105,6 +105,29 @@ public class Arrays_ {
 - In-place, time complexity depends on gap, Worst case O(n^2)
 - Unstable 
 - Can improve even bubble sort using this, can decrease the swaps
+
+### Search Algorithms
+
+#### Linear Search
+
+<details><summary>Linear Search code </summary><div markdown="1">
+
+```java
+  public static int linear_search(int searchElem) {
+      for (int i = 0; i < arr_.length; i++) {
+          if (arr_[i] == searchElem) {
+              return i;
+          }
+      }
+      return -1; // searchElem not found
+  }
+```
+
+</div></details>
+
+- TC : O(N) is worst case, if element is not found and we have to iterate the whole list.
+
+#### Binary Search
 
 ### References
 - [Data Structures and Algorithms: Deep Dive Using Java](https://www.udemy.com/course/data-structures-and-algorithms-deep-dive-using-java/)
