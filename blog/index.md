@@ -8,6 +8,7 @@ title: "Blog"
 <hr/>
 
 <div class="thumbnail-link-container">
+{% include url-thumbnail.html url="/blog/agile-software-methodology" %}
 {% include url-thumbnail.html url="/blog/android-cast-sender" %}
 {% include url-thumbnail.html url="/blog/py-excel-sheet-collage" %}
 {% include url-thumbnail.html url="/blog/java-selenium" %}

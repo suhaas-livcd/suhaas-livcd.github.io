@@ -128,6 +128,7 @@ public class Arrays_ {
 - TC : O(N) is worst case, if element is not found and we have to iterate the whole list.
 
 #### Binary Search
+- Data must be sorted
 
 ### References
 - [Data Structures and Algorithms: Deep Dive Using Java](https://www.udemy.com/course/data-structures-and-algorithms-deep-dive-using-java/)
