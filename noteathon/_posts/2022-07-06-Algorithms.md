@@ -60,8 +60,102 @@ meta-image: https://images.unsplash.com/photo-1608499337372-2fea1e07da37?ixlib=r
 - ##### No of subset given diff
 
 #### Unbounded Knapsack
-#### Fibonacci
+In an unbounded knapsack, the items in the value reduce only if they are **processed**, else they can be added again to the sack. 
+<img src="/noteathon/images/algo_dp_kpsack02_unbounded.svg" align="center" title="MainScreen">
+
+
+- ##### Rod Cutting
+- ##### Coin Change I
+- ##### Coin Change II
+- ##### Maximum Ribbon Cut
+
 #### LCS
+There are total of 14 problems. **Palindrome** questions are subset of LCS.
+1. Longest common Subsequence
+
+- Recursive
+``` java
+    /* Returns length of LCS for X[0..m-1], Y[0..n-1] */
+    int lcs(char[] X, char[] Y, int m, int n)
+    {
+        if (m == 0 || n == 0)
+            return 0;
+        if (X[m - 1] == Y[n - 1])
+            return 1 + lcs(X, Y, m - 1, n - 1);
+        else
+            return max(lcs(X, Y, m, n - 1), lcs(X, Y, m - 1, n));
+    }
+```
+
+Bottom Up
+```java
+/* Returns length of LCS for X[0..m-1], Y[0..n-1] */
+    int lcs(char[] X, char[] Y, int m, int n)
+    {
+        int L[][] = new int[m + 1][n + 1];
+  
+        /* Following steps build L[m+1][n+1] in bottom up fashion. Note
+         that L[i][j] contains length of LCS of X[0..i-1] and Y[0..j-1] */
+        for (int i = 0; i <= m; i++) {
+            for (int j = 0; j <= n; j++) {
+                if (i == 0 || j == 0)
+                    L[i][j] = 0;
+                else if (X[i - 1] == Y[j - 1])
+                    L[i][j] = L[i - 1][j - 1] + 1;
+                else
+                    L[i][j] = max(L[i - 1][j], L[i][j - 1]);
+            }
+        }
+        return L[m][n];
+    }
+```
+
+2. Longest common Substring
+ Check thread on [Leetcode](https://leetcode.com/discuss/interview-question/1273766/longest-common-substring)
+
+```
+Similar to Longest Common Subsequence LCS :
+If characters are equal : dp[i][j]=1 + dp[i-1][j-1]
+else dp[i][j]=0 // this is the only change
+```
+``` java
+public int  lgstComnSubstrDP(String str1, String str2){
+    int m = str1.length();
+    int n = str2.length();
+    int maxLen = 0;
+    int[][] dp = new int[m+1][n+1];
+
+    for(int i = 0; i<=m; i++){
+        for(int j = 0; j<=n; j++){
+            if(i == 0 || j == 0)
+                dp[i][j] = 0;
+            else if(str1.charAt(i-1) == str2.charAt(j-1))
+                dp[i][j] = 1+dp[i-1][j-1];
+            else
+                dp[i][j] = 0;
+            maxLen= Math.max(dp[i][j], maxLen);
+        }
+    }
+
+    return maxLen;
+}
+
+```
+
+3. Shortest common Subsequence
+4. Print SCS
+5. Min no of insertion and deletion a->b
+6. Largest Repeating subsequence
+7. Length of largest subsequence of 'a' which is substring in 'b'
+1. Subsequence pattern and matching
+1. Count how many times 'a' appears as subsequence in 'b'
+1. Largest palindromic subsequence
+1. Largest palindromic substring
+1. Count of palindromic substring
+1. Min no of deletions in string to make it palindrome
+1. Min no of insertions in string to make it palindrome
+
+#### Fibonacci
 #### LIS
 #### Kadane's algorithm
 #### Matrix chain multiplication
