@@ -23,7 +23,7 @@ meta-image: https://images.unsplash.com/photo-1608499337372-2fea1e07da37?ixlib=r
 - Bottom Up vs Top-Down
     - Stack : Excessive recursive calls may lead to the stack overflow error, which would be avoided in the bottom up solution case. But this happens rarely (e.g. Scrambled String which comes under MCM topic)
 
-#### 1. 0-1 Knapsack
+#### 1. Knapsack - 0|1
 - Fractional Knapsack (Greedy) : When you can fill the bag by using the fraction of the item
 - 0/1 : So item as a whole (1) or nothing (0). Supply is only 1.
 - Unbounded Knapsack : When the supply is unlimited, you can keep putting till the limit is reached. Multiple occurrence of same item are allowed.
@@ -34,22 +34,23 @@ meta-image: https://images.unsplash.com/photo-1608499337372-2fea1e07da37?ixlib=r
 
 <img src="/noteathon/algo_dp_kpsack01_choice.svg" align="center" title="MainScreen">
 
-- Google Docs Code
-    - [Top Down Code](https://docs.google.com/document/d/1Gz89n47BU_-KDU-Hh45v2VqbNUBXpfsFIIivQa6bfWo/edit#heading=h.qcridfslnts0)
-    - [Bottom up approach](https://docs.google.com/document/d/1Gz89n47BU_-KDU-Hh45v2VqbNUBXpfsFIIivQa6bfWo/edit#heading=h.8mlv8srpi00a)
+- ##### 1.1 0-1 Knapsack
+    - Google Docs Code
+        - [Top Down Code](https://docs.google.com/document/d/1Gz89n47BU_-KDU-Hh45v2VqbNUBXpfsFIIivQa6bfWo/edit#heading=h.qcridfslnts0)
+        - [Bottom up approach](https://docs.google.com/document/d/1Gz89n47BU_-KDU-Hh45v2VqbNUBXpfsFIIivQa6bfWo/edit#heading=h.8mlv8srpi00a)
 
 - ##### 1.2 Subset Sum
     - Question here is given the arr : {2,3,7,8,10}, check whether the sum of 11 is possible or not ?
     - When compared to the previous problem, the **Weight** arr is not given, so we can omit it.
     - Next observation is the **Max Values**, instead of max value it is Possible Subset. So, Max of numbers replace with True or False.
-    - (Bottom Up code)[https://docs.google.com/document/d/1Gz89n47BU_-KDU-Hh45v2VqbNUBXpfsFIIivQa6bfWo/edit#heading=h.7r6x0xlkpjpc]
-- ##### 2.3 Equal Sum
+    - [Bottom Up code](https://docs.google.com/document/d/1Gz89n47BU_-KDU-Hh45v2VqbNUBXpfsFIIivQa6bfWo/edit#heading=h.7r6x0xlkpjpc)
+- ##### 1.3 Equal Sum
     - Question here is give the arr : {1,5,5,11}, check whether the two subset exists with sum 11. In this it exists, Sub1{1,5,5} and Sub2{11}
     - Pattern the core logic : Odd/Even. If the sum of the whole subset is 22 then only you can **divide** and create two partitions. If the sum was 23, then in no way you can divide the sum.
     - To find the Subset Sum exists, just have to check the half the sum, because the other half would be present in the array anyways.
     - Pseudo Code
-       ```
-       sumOfArr isEven
+       ```java
+       if isEven(arr_sum)
             return (SubsetSum(sumOfArr/2))
         else
             return false
@@ -59,11 +60,11 @@ meta-image: https://images.unsplash.com/photo-1608499337372-2fea1e07da37?ixlib=r
 - ##### 1.6 Target Sum
 - ##### 1.7 No of subset given diff
 
-#### 2. Unbounded Knapsack
+#### 2. Knapsack - Unbounded
 In an unbounded knapsack, the items in the value reduce only if they are **processed**, else they can be added again to the sack. 
 <img src="/noteathon/images/algo_dp_kpsack02_unbounded.svg" align="center" title="MainScreen">
 
-
+- ##### 2.1 Unbounded Knapsack
 - ##### 2.2 Rod Cutting
 - ##### 2.3 Coin Change I
 - ##### 2.4 Coin Change II
@@ -282,13 +283,13 @@ else
     - Count of palindromic substring
 
 #### Note - TBD
-- #### Fibonacci
-- #### LIS
-- #### Kadane's algorithm
-- #### Matrix chain multiplication
-- #### DP on trees
-- #### DP on grid
-- #### Others
+- ##### Fibonacci
+- ##### LIS
+- ##### Kadane's algorithm
+- ##### Matrix chain multiplication
+- ##### DP on trees
+- ##### DP on grid
+- ##### Others
 
 
 
