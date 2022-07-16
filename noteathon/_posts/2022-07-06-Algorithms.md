@@ -147,17 +147,15 @@ else dp[i][j]=0 // this is the only change
 
 ##### 3.3 Printing LC Subsequence and String
 - To print it, you should observe the dp matrix that is generated. As, shown int the below image, we are following a **pattern**.
-
-
-    <img src="https://www.tutorialspoint.com/design_and_analysis_of_algorithms/images/lcs.jpg" align="center" title="MainScreen">
-
+<img src="https://www.tutorialspoint.com/design_and_analysis_of_algorithms/images/lcs.jpg" align="center" title="MainScreen">
+- Algorithm
 ``` java
-if weights_equal
-    add_char_to_word()
-else
-    move_towards_directionOf_Max(top, left)
+    if weights_equal
+        add_char_to_word()
+    else
+        move_towards_directionOf_Max(top, left)
 ```
-
+- Implementation
 ``` java
     string ans;
     int i = m, j = n;
@@ -186,15 +184,15 @@ else
 ```
 
 ##### 3.4 Shortest common supersequence
-    Part 1 : Shortest common SuperSequence
-    - [Leetcode](https://leetcode.com/problems/shortest-common-supersequence/)
+**Part_1** : Shortest common SuperSequence
+- [Leetcode](https://leetcode.com/problems/shortest-common-supersequence/)
+- Length of the shortest supersequence = (Sum of lengths of given two strings)  - (Length of LCS of two given strings)
 
-    - Length of the shortest supersequence = (Sum of lengths of given two strings)  - (Length of LCS of two given strings)
+**Part_2**: Print Shortest common SuperSequence
+- Just traversal towards the **MAX** dp element direction till one of the idx reaches 0.
+- [LeetCode](https://leetcode.com/problems/shortest-common-supersequence/)
 
-    Part 2 : Print Shortest common SuperSequence
-    - Just traversal towards the **MAX** dp element direction till one of the idx reaches 0.
-    - [LeetCode](https://leetcode.com/problems/shortest-common-supersequence/)
-    ``` java
+``` java
         // Traverse from the back the dp array
         while(i>0 && j>0){
             if(str1.charAt(i-1) == str2.charAt(j-1)){
@@ -220,13 +218,11 @@ else
         }
         return sb.reverse().toString();
     }
-    ```
-
+```
 
 ##### 3.5 Min no of insertion and deletion a->b
-    - [Leetcode](https://leetcode.com/problems/delete-operation-for-two-strings/)
-
-    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200817135845/picture2-660x402.jpg" align="center" title="MainScreen">
+- [Leetcode](https://leetcode.com/problems/delete-operation-for-two-strings/)
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20200817135845/picture2-660x402.jpg" align="center" title="MainScreen">
 
 - Algorithm: 
     - str1 and str2 be the given strings.
@@ -237,9 +233,9 @@ else
     - Note : [Similar Question](https://www.geeksforgeeks.org/edit-distance-dp-5/) to be checked.
 
 ##### 3.6 Longest palindromic subsequence
-    - [Leetcode](https://leetcode.com/problems/longest-palindromic-subsequence/)
-    - In this question **inputs** dont match, there might be chance that the secons string should be **hidden** or a **function**,**derivative** of the first string or **redundant**.
-    - Here, the second string is **redundant**, since to find the Longest Palindromic SubSequence (LPS) of a, we just need to compare it with the reverse of the string and find the longest LCS.
+- [Leetcode](https://leetcode.com/problems/longest-palindromic-subsequence/)
+- In this question **inputs** dont match, there might be chance that the secons string should be **hidden** or a **function**,**derivative** of the first string or **redundant**.
+- Here, the second string is **redundant**, since to find the Longest Palindromic SubSequence (LPS) of a, we just need to compare it with the reverse of the string and find the longest LCS.
 
 ```
     LPS(a) = LCS(a, reverse(a));
@@ -247,9 +243,9 @@ else
 
 ##### 3.7 Min no of deletions in string to make it palindrome
 
-    - [Leetcode](https://leetcode.com/discuss/interview-question/371677/Google-or-Onsite-or-Min-Deletions-to-Make-Palindrome)
+- [Leetcode](https://leetcode.com/discuss/interview-question/371677/Google-or-Onsite-or-Min-Deletions-to-Make-Palindrome)
 
-    - To make the min nuumber of deletions, you have to create the longest palindromic subsequence. Min is inversely proportion to Longest.
+- To make the min nuumber of deletions, you have to create the longest palindromic subsequence. Min is inversely proportion to Longest.
 
 ```
     MinDel = totalLen - LPS(a)
@@ -257,6 +253,7 @@ else
 
 ##### 3.8 Longest Repeating subsequence
 [LeetCode](https://leetcode.com/discuss/general-discussion/1274765/longest-repeated-subsequence-lrs)
+
 ```java
     if(X[i-1]==Y[j-1] && i!=j) { // this is the only extra condition
         dp[i][j]=1+dp[i-1][j-1];
@@ -265,11 +262,12 @@ else
 
 ##### 3.9 Sequence Pattern matching
     - The idea is simple, to find the LCS and the LCS should be the string itself. The range of LCS can be from **0 to minLen(a,b)**.
-    ```java
+    
+```java
     isLen( LCS(a,b)) == minLen(a,b);
-    ```
-    - [LeetCode - Is Subsequence](https://leetcode.com/problems/is-subsequence/)
-    - [LeetCode - No of matching subsequence](https://leetcode.com/problems/number-of-matching-subsequences/)
+```
+- [LeetCode - Is Subsequence](https://leetcode.com/problems/is-subsequence/)
+- [LeetCode - No of matching subsequence](https://leetcode.com/problems/number-of-matching-subsequences/)
 
 ##### 3.10 Min no of insertions in string to make it palindrome
     - The idea is similar to **Min number of deletion to make it LPS**.
@@ -281,6 +279,137 @@ else
     - Count how many times 'a' appears as subsequence in 'b'
     - Largest palindromic substring
     - Count of palindromic substring
+
+#### 4. Matrix chain multiplication (MCM)
+
+- Read this [LeetCode_Post.](https://leetcode.com/discuss/general-discussion/1278305/all-about-matrix-chain-multiplication-easy)
+- ***Pattern*** : The problem is not about the computation, rather the **order** to be performed in so as to get the optimal answer.
+- E.g based on associate law it is okay to perform multiplication in any way as shown below. But the cost involved in the performing operations is what makes it different.
+ ```(ABC)D = (AB)(CD) = A(BCD)```
+
+##### 4.1 MCM base
+- Problem statement explained on [GeekForGeeks](https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/)
+
+```java
+// "static void main" must be defined in a public class.
+public class MCM {
+    static int[][] dp;
+    public static void main(String[] args) {
+        MCM obj = new MCM();
+        System.out.println("Hello World!");
+        int[] arr = {40,20,30,10,30};
+        // dp initialization
+        dp = new int[arr.length][arr.length];
+        for(int[] row : dp){
+            Arrays.fill(row,-1);
+        }
+        int value = obj.solve(arr,1,arr.length-1);
+        System.out.println(" Value : "+value);
+        for(int i = 0;i<arr.length;i++){
+            for(int j = 0;j<arr.length;j++){
+                System.out.print(dp[i][j]+",");
+            }
+            System.out.println();
+        }
+    }
+    
+    public int solve(int[] arr, int i, int j){
+        int minValue = Integer.MAX_VALUE -1;
+        if(i>=j){//if equal then only 1 element; so included equal too
+            return 0;
+        }
+        
+        // Memoization to store the min value in the i-j range from all the possible subsets.
+        if(dp[i][j]!=-1){
+            return dp[i][j];
+        }
+        
+        for(int k=i;k<j;k++){ // Runs tilll j-1
+            int ans = solve(arr,i,k) + solve(arr,k+1,j) + (arr[i-1] * arr[k] * arr[j]);
+            System.out.println(" Sub Value : "+ans +" Range value : "+i+","+k+","+j);
+            dp[i][j] = minValue = Math.min(ans, minValue);
+        }
+        return minValue;
+    }
+}
+```
+
+- When memoized the value it stores the min value in the range.
+- M (Col:2 - Row:4) indicates the min value range. To know more, see below
+    - Based on the arr = {40,20,30,10,30}
+        - M<sub>1</sub> : 40 * 20
+        - M<sub>2</sub> : 20 * 30
+        - M<sub>3</sub> : 30 * 10
+        - M<sub>4</sub> : 10 * 30
+    - M<sub>2</sub>.(M<sub>3</sub>.M<sub>4</sub>) = 6000 + 9000 = **15000**
+    - (M<sub>2</sub>.M<sub>3</sub>).M<sub>4</sub> = 6000 + 6000 = **12000**
+    - Since, *Min*(12000,15000) = **12000**; the value M<sub>2..4</sub> will be equal to 12000.
+
+| Matrix Range |   0|1   |2   |3   |4   |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|**0**| -1 | -1 | -1 | -1 | -1 |
+|**1**| -1|-1|24000|14000|26000|
+|**2**| -1|-1|-1|6000|**12000**|
+|**3**| -1|-1|-1|-1|9000|
+|**4**| -1|-1|-1|-1|-1|
+
+##### 4.2 Printing MCM
+##### 4.3 Evaluate expression to TRUE/Boolean parenthization
+##### 4.4 Min/Max value of expression
+##### 4.5 Palindrome partitioning
+- Worst case partitions will be : len(str) - 1
+- if string isEmpty or palindrome then 0 partition required
+- Identify keywords : min partition, left-right traversal.
+- The test cases fails without the **Left Part** optimization, since at any point to be the cuts optimized the left parts all should be optimized. So, since before checking right, we are also checking if the left part is optimized.
+    e.g. **abbd** we will check, *a* > *bb* then *d*
+
+- [Leetcode Problem : Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/)
+- [LeetCode solution](https://leetcode.com/problems/palindrome-partitioning-ii/discuss/1267844/JAVA-or-Recursion-%2B-Memoization-or-Optimized-Matrix-Chain-Multiplication-Approach-with-Code-(MCM))
+```java
+    int solve(String str, int i, int j){
+        //Base Cases
+        if(i>=j){
+            return 0;
+        }
+        if(dp[i][j]!=null){
+            return dp[i][j];
+        }
+        
+        
+        /*If the current string is palindrome then we dont need to break it into 
+        further sub problems as we want to minimize the cuts.*/
+        if(isPalindrome(str, i, j)){
+            dp[i][j]=0;
+            return 0;
+        }
+        
+        
+        int min = Integer.MAX_VALUE;
+        //Trying Different possible cuts between i and j
+        for(int k = i; k<=j;k++){
+            
+            /*An Optimization: We will make the partition only if the string till the partition 
+            (till Kth position) is a valid palindrome. Because the question states that all 
+            partition must be a valid palindrome. If we dont check this, we will have to 
+            perform recursion on the left subproblem too (solve(str, i, k)) and	we will waste 
+            a lot of time on subproblems that is not required. Without this the code will give
+            correct answer but TLE on big test cases. */
+            if(isPalindrome(str, i, k)){
+                int partitions = 1+solve(str, k+1, j);
+                min = Math.min(min, partitions);                
+            }
+            
+            
+        }
+        
+        //Store answer in the memo table
+        dp[i][j]=min;
+        return dp[i][j];
+    }
+```
+##### 4.6 Scramble String
+##### 4.7 Egg dropping problem
+##### 4.8 Balloon burst
 
 #### Note - TBD
 - ##### Fibonacci
@@ -296,5 +425,7 @@ else
 
 
 ### References
+
+- All credits to [Youtuble playlist](https://www.youtube.com/playlist?list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go) on DP by **Aditya Verma**. Above is just summarization and some additional references that I read and took some other references such as GeekForGeeks and LeetCode discussions.
 
 ## Next: [Java-DS-Algo](/noteathon/java-ds-algo)
