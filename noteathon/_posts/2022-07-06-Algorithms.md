@@ -353,10 +353,81 @@ public class MCM {
 |**3**| -1|-1|-1|-1|9000|
 |**4**| -1|-1|-1|-1|-1|
 
-##### 4.2 Printing MCM
-##### 4.3 Evaluate expression to TRUE/Boolean parenthization
-##### 4.4 Min/Max value of expression
-##### 4.5 Palindrome partitioning
+##### 4.2 Evaluate expression to TRUE/Boolean parenthization
+- Hey! Crazy question :fire:. [GFG : Boolean Parenthesization Problem ](https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/). The idea is to **find the way that the expression is evaluate to TRUE**.
+- e.g. `expr : T|F&T^F` has 5 ways listed below
+    1. (T|F) & (T^F)
+    1. T | ((F&T)^F)
+    1. T | (F&(T^F))
+    1. ((T|F) & T) ^ F
+    1. (T | (F&T))^F
+- How to know whether the expression is True or False;
+    - expr ` T | F` has a leftTrue : 1 and rightFalse : 1
+    - For each operator ' | ', we have calculation based on the truth table.
+        | p	| q	| p OR q |
+        |:---:|:---:|:---:|
+        | T	| T	| T |
+        | T	| F	| T |
+        | F	| T	| T |
+        | F	| F	| F |
+    - Here to know the no of True values, we have to add the sum
+        - TrueValue = (leftT*rightF) + (leftF*rightT) + (leftT*rightT);
+        - FalseValue = (leftF*rightF)
+    - Because of the above case, at every point to evaluate an expression we need to know to left and right values. In addition to that we also need to check whether it is True 'T' or False 'F' based on the character and boolean that we are checking case whether true or false.
+        - if ```istrue==1 & str[i] ='T'``` it means we required a true and got it so return 1 else return 0
+        - if ```istrue==0 & str[i] ='F'``` it means we required a false and got it so return 1 else return 0
+    - **Memoization**, unlike other dp we are also isTrue/False, so need to track 3 variables. Can store in a ```Map( i +" "+j+" "+isTrue)``` or 3D Matrix ```dp = new int[str.length()+1][str.length()+1][2];```
+
+```java
+    int solve(String str, int i, int j, int istrue)
+    {
+        if(i>j)return 0;
+        if(i==j)
+        {  
+		     // if istrue==1 & str[i] ='T' it means we required a true and got it so return 1 else return 0
+			 // if istrue==0 & str[i] ='F' it means we required a false and got it so return 1 else return 0
+			 
+            if(istrue == 1)return (str.charAt(i)=='T')?1:0;   
+            else return (str.charAt(i)=='F')?1:0;
+        }     
+        int ans=0;
+        // dp checking value. Use 3d matrix or map for better vizualization
+        if(dp[i][j][istrue]!=-1){
+            return dp[i][j][istrue];
+        }
+        // parition at the logical operator, so that you have the left subpart and the right subpart.
+        for(int k=i+1;k<=j-1;k=k+2)
+        {
+            // Get left T,F and right T,F so that you can know how true exists, which will help in summing up the number of true values.
+            int leftT=  solve(str,i,k-1,1);
+            int leftF=  solve(str,i,k-1,0);
+            int rightT= solve(str,k+1,j,1);
+            int rightF= solve(str,k+1,j,0);
+
+            if(str.charAt(k)=='^')
+            {
+                if(istrue == 1)
+                ans+=(leftT*rightF) + (leftF*rightT);
+                else ans+=(leftT*rightT) + (leftF*rightF) ;
+            }
+            else if(str.charAt(k)=='&')
+            {
+                if(istrue == 1)
+                ans+=(leftT*rightT);
+                else ans+=(leftT*rightF) + (leftF*rightT) + (leftF*rightF);
+            }
+            else if(str.charAt(k)=='|')
+            {
+                if(istrue == 1)
+                ans+=(leftT*rightF) + (leftF*rightT) + (leftT*rightT);
+                else ans+=(leftF*rightF) ;
+            }
+            
+            System.out.println("Char : "+str.charAt(k)  +" Ans :  "+ans+" L " + " : " +  leftT + ", " +  leftF + ", R : " +  rightT + ", " +  rightF +" Substring : "+str.substring(i,j+1) + " " + (istrue == 1));
+        }
+        return dp[i][j][istrue] = ans;    }
+```
+##### 4.3 Palindrome partitioning
 - Worst case partitions will be : len(str) - 1
 - if string isEmpty or palindrome then 0 partition required
 - Identify keywords : min partition, left-right traversal.
@@ -407,9 +478,63 @@ public class MCM {
         return dp[i][j];
     }
 ```
-##### 4.6 Scramble String
-##### 4.7 Egg dropping problem
-##### 4.8 Balloon burst
+
+##### 4.4 Egg dropping problem :egg:
+- More resources or detaliled explanation [Pepcoding](https://www.youtube.com/watch?v=UvksR0hR9nA), [AlgoTree](https://www.algotree.org/algorithms/dynamic_programming/egg_drop/), [BackToBackSWE](https://www.youtube.com/watch?v=iOaRjDT0vjc)
+- [Leetcode : Super Egg drop problem](https://leetcode.com/problems/super-egg-drop/)
+- Check for optimization on how to convert to a binary search problem on [Youtube](https://www.youtube.com/watch?v=dakViFo0CM0)
+- Check different [solutions](https://leetcode.com/problems/super-egg-drop/discuss/2262026/Recursive-Memoized-Optimized-Memoized-Memoized-Binary-Search-Java-Solutions), they way they are optimized.
+
+```java
+    public int superEggDrop(int e, int f) {
+        // k eggs and n floors
+        // if the floor is 1, then check only once, if no true floor then return
+        if(f == 1 || f==0){
+            return f;
+        }
+        
+        // if you have 1 egg, then you have to test at each floor.
+        if(e == 1){
+            return f;
+        }
+        
+        if(dp[e][f] !=-1){
+            return dp[e][f];
+        }
+        
+        int minVal = Integer.MAX_VALUE;
+        
+        for(int k = 1;k<=f;k++){
+            
+            // Check leftPart if exists else calculate
+            int leftPart = dp[e-1][k-1], rightPart = dp[e][f-k];
+            if(leftPart == -1){
+                leftPart = superEggDrop(e-1,k-1);
+                dp[e-1][k-1] = leftPart;
+            }
+            
+            // Check leftPart if exists else calculate
+            if(rightPart == -1){
+                rightPart = superEggDrop(e,f-k);
+                dp[e][f-k] = rightPart;
+            }
+            int tempVal = Math.max(leftPart, // Broken
+                                   rightPart // Not broken
+                                  );
+            
+            // int tempVal = Math.max(superEggDrop(e-1,k-1), // Broken
+            //                        superEggDrop(e,f-k) // Not broken
+            //                       );
+            minVal = Math.min(tempVal,minVal);
+        }
+        return dp[e][f] = minVal + 1;
+    }
+```
+#### Note - TBD
+##### 4.5 Min/Max value of expression
+##### 4.6 Balloon burst :balloon:
+##### 4.7 Printing MCM
+##### 4.8 Scramble String
 
 #### Note - TBD
 - ##### Fibonacci
