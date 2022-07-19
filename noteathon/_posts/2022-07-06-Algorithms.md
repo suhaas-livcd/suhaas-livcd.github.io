@@ -356,14 +356,16 @@ public class MCM {
 ##### 4.2 Evaluate expression to TRUE/Boolean parenthization
 - Hey! Crazy question :fire:. [GFG : Boolean Parenthesization Problem ](https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/). The idea is to **find the way that the expression is evaluate to TRUE**.
 - e.g. `expr : T|F&T^F` has 5 ways listed below
-    1. (T|F) & (T^F)
-    1. T | ((F&T)^F)
-    1. T | (F&(T^F))
-    1. ((T|F) & T) ^ F
-    1. (T | (F&T))^F
+
+    1. ( T\|F ) & ( T^F )
+    1. T \| ( ( F&T )^F )
+    1. T \| ( F& ( T^F ) ) 
+    1. ( ( T\|F ) & T ) ^ F
+    1. ( T \| ( F&T ) )^F
 - How to know whether the expression is True or False;
     - expr ` T | F` has a leftTrue : 1 and rightFalse : 1
-    - For each operator ' | ', we have calculation based on the truth table.
+    - For each operator ' \| ', we have calculation based on the truth table.
+    
         | p	| q	| p OR q |
         |:---:|:---:|:---:|
         | T	| T	| T |
@@ -530,23 +532,16 @@ public class MCM {
         return dp[e][f] = minVal + 1;
     }
 ```
-#### Note - TBD
-##### 4.5 Min/Max value of expression
-##### 4.6 Balloon burst :balloon:
-##### 4.7 Printing MCM
-##### 4.8 Scramble String
-
-#### Note - TBD
+#### Pending topics and questions
+- ##### MCM based
+    - ##### 4.5 Min/Max value of expression
+    - ##### 4.6 Balloon burst :balloon:
+    - ##### 4.7 Printing MCM
+    - ##### 4.8 Scramble String
 - ##### Fibonacci
-- ##### LIS
 - ##### Kadane's algorithm
-- ##### Matrix chain multiplication
 - ##### DP on trees
 - ##### DP on grid
-- ##### Others
-
-
-
 
 
 ### References
