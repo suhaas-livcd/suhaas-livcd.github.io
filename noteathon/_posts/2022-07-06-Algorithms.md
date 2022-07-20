@@ -534,7 +534,7 @@ public class MCM {
     }
 ```
 
-#### 5 DP on trees
+#### 5 DP on trees :deciduous_tree: 
 - Structure
     - Base condition
     ```java
@@ -607,9 +607,10 @@ return max(root.value, leftPath, rightPath);
     - ##### 4.6 Balloon burst :balloon:
     - ##### 4.7 Printing MCM
     - ##### 4.8 Scramble String
+- ##### DP on trees
+    - ##### 5.3 Binary Tree Max Path Sum
 - ##### Fibonacci
 - ##### Kadane's algorithm
-- ##### DP on trees
 - ##### DP on grid
 
 
