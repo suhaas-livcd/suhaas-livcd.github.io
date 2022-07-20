@@ -289,6 +289,7 @@ else dp[i][j]=0 // this is the only change
 
 ##### 4.1 MCM base
 - Problem statement explained on [GeekForGeeks](https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/)
+- Identification **MCM** is based on input either String, Array,where we have to find optimal somethings using partitions or either iterating the whole string.
 
 ```java
 // "static void main" must be defined in a public class.
@@ -532,6 +533,74 @@ public class MCM {
         return dp[e][f] = minVal + 1;
     }
 ```
+
+#### 5 DP on trees
+- Structure
+    - Base condition
+    ```java
+    if root ==null return 0;
+    ```
+    - Hypothesis
+        ```java
+        int leftPath = helper(root.left);
+        int rightPath = helper(root.right);
+        ```
+    - Induction
+    ```java
+    int temp = _____;
+    int ans = Max(temp,_____);
+    ```
+    - Return comparing temporary and final answer
+    ```java
+    return max
+    ```
+
+##### 5.1 Diameter of binary tree
+- [Leetcode Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
+- Keypoints the diameter does not need to pass through the root, it can pass from any node. So, need to know the max (left, right) from each node.
+
+```java
+class Solution {
+    int maxVal;
+    public int diameterOfBinaryTree(TreeNode root) {
+        maxVal = Integer.MIN_VALUE;
+        int ans = helper(root);
+        return maxVal;
+    }
+    
+    int helper(TreeNode root){
+        if(root == null){
+            return 0;
+        }
+        int leftPath = helper(root.left);
+        int rightPath = helper(root.right);
+        //System.out.println(" Checking val : "+root.val +" l,r :"+leftNode+" , "+rightNode);
+
+        maxVal = Math.max(maxVal, leftPath + rightPath);
+        return Math.max(leftPath,rightPath) + 1;
+    }
+} 
+```
+##### 5.2 Binary Tree Max Path Sum
+- The idea is, if the childs are -ve and the root is positive then take the root itself, instead of child.
+[LeetCode Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+
+- [Explanation](https://leetcode.com/problems/binary-tree-maximum-path-sum/discuss/389609/Full-Explanation-article-with-pseudo-code-Beats-JAVA-100-time-and-100-space-Solution)
+```java
+if( root == null) return 0;
+left = recurse(leftChild);
+right = recurse(rightChild);
+
+// now find the max of all the four paths
+leftPath = root.value + left;
+rightPath = root.value + right;
+completePath = root.value + right + left;
+
+result = max( root.value, leftPath, rightPath, completePath );
+
+return max(root.value, leftPath, rightPath);
+```
+
 #### Pending topics and questions
 - ##### MCM based
     - ##### 4.5 Min/Max value of expression
