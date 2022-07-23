@@ -30,6 +30,14 @@ Table of contents
 <!--te-->
 {% endcomment %} 
 
+#### Sentiment Analysis with Logistic Regression
+- Applications : sentimental analysis and word translation
+
+#### Sentiment Analysis with Naïve Bayes
+#### Vector Space Models
+#### Machine Translation and Document Search
+
+
 ### References
 
 

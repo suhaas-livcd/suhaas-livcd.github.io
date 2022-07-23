@@ -11,7 +11,6 @@ title: "Noteathon"
 <div class="thumbnail-link-container">
 {% include url-thumbnail.html url="/noteathon/dynamic-programming" %}
 {% include url-thumbnail.html url="/noteathon/java-ds-algo" %}
-<!-- {% include url-thumbnail.html url="/projects/project-karaoke" %} -->
 </div>
 
 <hr/>
@@ -23,7 +22,14 @@ title: "Noteathon"
 {% include url-thumbnail.html url="/noteathon/nlp-with-sequence-models" %}
 
 {% include url-thumbnail.html url="/noteathon/nlp-with-attention-models" %}
-<!-- {% include url-thumbnail.html url="/projects/project-karaoke" %} -->
+</div>
+
+
+<hr/>
+<div class="thumbnail-link-container">
+{% include url-thumbnail.html url="/noteathon/lc-design-qs" %}
+{% include url-thumbnail.html url="/noteathon/lc-binary-search" %}
+
 </div>
 
 
