@@ -32,6 +32,11 @@ Table of contents
 
 #### Sentiment Analysis with Logistic Regression
 - Applications : sentimental analysis and word translation
+- Flow for classifying a tweet whether it is positive or negative. 
+  - Extract features
+  - Train model
+  - Classify the tweet
+- To perform sentiment analysis on a tweet, you first have to represent the text (i.e. "I am happy because I am learning NLP ") as features, you then train your logistic regression classifier, and then you can use it to classify the text.
 
 #### Sentiment Analysis with Naïve Bayes
 #### Vector Space Models
