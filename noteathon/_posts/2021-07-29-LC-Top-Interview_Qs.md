@@ -1175,6 +1175,424 @@ class Solution {
 **SC** : O(1), where we append all the strings to builder.
 </div>
 </details>
+
+### [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+- There are two solutions.
+- Brute force is to sort each string and then store in the HashMap
+- Optimized is to count the freqeuence of each characters and then get the HashKey and store. The second method take the space O ( N . K. 26) ~ O(N.K)
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+// Solution 1 : O(N K log K)
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        if (strs.length == 0) return new ArrayList();
+        Map<String, List> ans = new HashMap<String, List>();
+        for (String s : strs) {
+            char[] ca = s.toCharArray();
+            Arrays.sort(ca);
+            String key = String.valueOf(ca);
+            if (!ans.containsKey(key)) ans.put(key, new ArrayList());
+            ans.get(key).add(s);
+        }
+        return new ArrayList(ans.values());
+    }
+}
+
+// Solution 2 : O( N . K )
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        if (strs.length == 0) return new ArrayList();
+        Map<String, List> ans = new HashMap<String, List>();
+        int[] count = new int[26];
+        for (String s : strs) {
+            Arrays.fill(count, 0);
+            for (char c : s.toCharArray()) count[c - 'a']++;
+
+            StringBuilder sb = new StringBuilder("");
+            for (int i = 0; i < 26; i++) {
+                sb.append('#');
+                sb.append(count[i]);
+            }
+            String key = sb.toString();
+            if (!ans.containsKey(key)) ans.put(key, new ArrayList());
+            ans.get(key).add(s);
+        }
+        return new ArrayList(ans.values());
+    }
+}
+```
+**Complexity Analysis**
+**TC** :
+    - Solution 1 : O(NKlogK), where N is the length of strs, and K is the maximum length of a string in strs. The outer loop has complexity O(N) as we iterate through each string. Then, we sort each string in O(KlogK) time.
+    - Solution 2 : O(N.K.26), where N is the length of strs, and K is the maximum length of a string in strs. Counting each string is linear in the size of the string, and we count every string.
+
+**SC** : O(NK), the total information content stored in ans. 
+</div>
+</details>
+
+
+### [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+// Solution 1 using 4 places, top left, top right, btm left and right.
+class Solution {
+    public void rotate(int[][] matrix) {
+        int n = matrix.length;
+        for (int i = 0; i < (n + 1) / 2; i ++) {
+            for (int j = 0; j < n / 2; j++) {
+                int temp = matrix[n - 1 - j][i];
+                matrix[n - 1 - j][i] = matrix[n - 1 - i][n - j - 1];
+                matrix[n - 1 - i][n - j - 1] = matrix[j][n - 1 -i];
+                matrix[j][n - 1 - i] = matrix[i][j];
+                matrix[i][j] = temp;
+            }
+        }
+    }
+}
+
+// Solution 2 
+class Solution {
+    public void rotate(int[][] matrix) {
+        transpose(matrix);
+        reflect(matrix);
+    }
+    
+    public void transpose(int[][] matrix) {
+        int n = matrix.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int tmp = matrix[j][i];
+                matrix[j][i] = matrix[i][j];
+                matrix[i][j] = tmp;
+            }
+        }
+    }
+    
+    public void reflect(int[][] matrix) {
+        int n = matrix.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n / 2; j++) {
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[i][n - j - 1];
+                matrix[i][n - j - 1] = tmp;
+            }
+        }
+    }
+}
+```
+**Complexity Analysis**
+**TC** : Solution 1 : O(M) Let M be the number of cells in the matrix. O(M), as each cell is getting read once and written once.
+Solution 2 : O(M). We perform two steps; transposing the matrix, and then reversing each row. Transposing the matrix has a cost of O(M) because we're moving the value of each cell once. Reversing each row also has a cost of O(M), because again we're moving the value of each cell once.
+**SC** : O(1) because we do not use any other additional data structures.
+</div>
+</details>
+
+### [46. Permutations](https://leetcode.com/problems/permutations/)
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+// Solution 1 :
+class Solution {
+  public void backtrack(int n,
+                        ArrayList<Integer> nums,
+                        List<List<Integer>> output,
+                        int first) {
+    // if all integers are used up
+    if (first == n)
+      output.add(new ArrayList<Integer>(nums));
+    for (int i = first; i < n; i++) {
+      // place i-th integer first 
+      // in the current permutation
+      Collections.swap(nums, first, i);
+      // use next integers to complete the permutations
+      backtrack(n, nums, output, first + 1);
+      // backtrack
+      Collections.swap(nums, first, i);
+    }
+  }
+
+  public List<List<Integer>> permute(int[] nums) {
+    // init output list
+    List<List<Integer>> output = new LinkedList();
+
+    // convert nums into list since the output is a list of lists
+    ArrayList<Integer> nums_lst = new ArrayList<Integer>();
+    for (int num : nums)
+      nums_lst.add(num);
+
+    int n = nums.length;
+    backtrack(n, nums_lst, output, 0);
+    return output;
+  }
+}
+
+// Solution 2 :
+public class Permutations {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        permute(nums, new boolean[nums.length], new ArrayList<>(), result);
+        return result;
+    }
+
+    private void permute(int[] nums, boolean[] used, List<Integer> permutation, List<List<Integer>> result) {
+        if (permutation.size() == nums.length) {
+            result.add(new ArrayList<>(permutation));
+            return;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (used[i]) continue;
+
+            used[i] = true;
+            permutation.add(nums[i]);
+            permute(nums, used, permutation, result);
+            used[i] = false;
+            permutation.remove(permutation.size() - 1);
+        }
+    }
+}
+```
+**Complexity Analysis**
+**TC** : (Took from comments) First, I think the time complexity should be N x N!.
+Initially we have N choices, and in each choice we have (N - 1) choices, and so on. Notice that at the end when adding the list to the result list, it takes O(N).
+**SC** : Second, the space complexity should also be N x N! since we have N! solutions and each of them requires N space to store elements
+</div>
+</details>
+
+
+### [50. Pow(x, n)](https://leetcode.com/problems/powx-n/)
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+class Solution {
+    public double myPow(double x, int n) {
+        long N = n;
+        if (N < 0) {
+            x = 1 / x;
+            N = -N;
+        }
+        double ans = 1;
+        for (long i = 0; i < N; i++)
+            ans = ans * x;
+        return ans;
+    }
+}
+
+// Solution 2 
+class Solution {
+    public double myPow(double x, int n) {
+        long N = n;
+        if (N < 0) {
+            x = 1 / x;
+            N = -N;
+        }
+        double ans = 1;
+        double current_product = x;
+        for (long i = N; i > 0; i /= 2) {
+            if ((i % 2) == 1) {
+                ans = ans * current_product;
+            }
+            current_product = current_product * current_product;
+        }
+        return ans;
+    }
+};
+```
+**Complexity Analysis**
+**TC** : // Solution 1 : O(n) times since we are multiplying it by N times
+// Solution 2 : Fast Power Algorithm Iterative O(logn). For each bit of n 's binary representation, we will at most multiply once. So the total time complexity is O(logn).
+**SC** : 
+</div>
+</details>
+
+### [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+- Brute force is calculating sum starting from each i till end, then comparing all the max values.
+
+- The idea is based on the previous (prefix Sum) and comparing the current number.
+
+```
+maxSubArray(A, i) = maxSubArray(A, i - 1) > 0 ? maxSubArray(A, i - 1) : 0 + A[i]; 
+```
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+// SOlution 1 - Brute Force
+class Solution {
+    public int maxSubArray(int[] nums) {
+       int max = nums[0];
+        for(int i=0;i<nums.length;i++){
+            int sum=0;
+            for(int j=i;j<nums.length;j++){
+                sum += nums[j];
+                if(sum > max){
+                    max=sum;
+                }
+                System.out.println(" Checked sum : "+sum+" , "+max +" i,j "+i+","+j);
+            }
+            System.out.println(" -- ");
+        }
+        return max;
+    }
+}
+
+// Solution 2 Optimized DP
+public int maxSubArray(int[] A) {
+        int n = A.length;
+        int[] dp = new int[n];//dp[i] means the maximum subarray ending with A[i];
+        dp[0] = A[0];
+        int max = dp[0];
+        
+        for(int i = 1; i < n; i++){
+            dp[i] = A[i] + (dp[i - 1] > 0 ? dp[i - 1] : 0);
+            max = Math.max(max, dp[i]);
+        }
+        
+        return max;
+}
+```
+**Complexity Analysis**
+**TC** : Sol 1 : O(n^2) and Solution 2 : O(n)
+**SC** : O(n) - dp array, not always required if we store the previous variable.
+</div>
+</details>
+
+### [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
+- Increase the top left bound and reduce the bottom right bound.
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+class Solution {
+    public List<Integer> spiralOrder(int[][] result) {
+        List<Integer> resultList = new ArrayList<>();
+        int rowStart = 0;
+        int colStart = 0;
+        int rowLen = result.length-1;
+        int colLen = result[0].length-1;
+        while(rowStart <= rowLen && colStart <= colLen){
+            // Right
+            for(int j=colStart;j<=colLen;j++){
+                //System.out.println("R i,j "+rowStart+","+j);
+                resultList.add(result[rowStart][j]);
+            }
+            rowStart++;
+
+            // Down
+            for(int i=rowStart;i<=rowLen;i++){
+                //System.out.println("D i,j "+i+","+colLen);
+                resultList.add(result[i][colLen]);
+            }
+            colLen--;
+
+            // Left
+            for(int j=colLen;j>=colStart;j--){
+                if(rowStart<=rowLen){
+                    //System.out.println("L i,j "+rowLen+","+j);
+                    resultList.add(result[rowLen][j]);
+                }
+
+            }
+            rowLen--;
+
+            //Up
+            for(int i=rowLen;i>=rowStart;i--){
+                if(colStart<=colLen){
+                    //System.out.println("U i,j "+i+","+colStart);
+                    resultList.add(result[i][colStart]);
+                }
+            }
+            colStart++;
+        }
+        return resultList; 
+    }
+}
+```
+**Complexity Analysis**
+**TC** : O(M⋅N). This is because we visit each element once.
+**SC** : O(1). This is because we don't use other data structures. Remember that we don't include the output array in the space complexity.
+</div>
+</details>
+
+
+### [55. Jump Game](https://leetcode.com/problems/jump-game/)
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+// Solution 1 - Greedy approach O(n)
+class Solution {
+
+    public boolean canJump(int[] nums) {
+        int goal = nums.length - 1;
+        for (int i = nums.length - 2; i >= 0; i--) {
+            if (nums[i] + i >= goal) {
+                goal = i;
+            }
+        }
+        return goal == 0;
+    }
+}
+
+// Solution 2 Recursive O(n^2)
+class Solution {
+    int max;
+    int[] dp;
+    public boolean canJump(int[] nums) {
+        max = 0;
+        dp = new int[nums.length];
+        Arrays.fill(dp,-1);
+        helper(nums, 0);
+        //System.out.println(" Dp : "+Arrays.toString(dp));
+        return max == nums.length-1;
+    }
+    
+    private int helper(int[] nums, int idx){
+        
+        //System.out.println("-");
+        if(idx >= nums.length-1){
+            return nums.length - 1;
+        }
+        
+        if(dp[idx]!=-1){
+            return dp[idx];
+        }
+        
+        // cant go further
+        if(nums[idx] == 0){
+            return idx;
+        }
+        
+        // i = 0;
+        int choices = nums[idx];
+        int limit = (idx+choices >= nums.length-1) ? nums.length-1 :idx+choices;
+        for(int i = idx+1;i<=limit;i++){
+            //System.out.println(" Check i : "+i +" M : "+max);
+            int ret = helper(nums, i);
+            max = Math.max(max,ret);
+            dp[i] = max;
+            if(max == nums.length-1){
+                return max;
+            }
+        }
+       
+        
+        return max;
+    }
+}
+```
+**Complexity Analysis**
+**TC** : Greedy - O(n). We are doing a single pass through the nums array, hence n steps, where n is the length of array nums. DP - O(n2) For every element in the array, say i, we are looking at the next nums[i] elements to its right aiming to find a GOOD or MAX index. nums[i] can be at most n is the length of array nums.
+**SC** : O(1) and DP -  O(n). Recursion requires additional memory for the stack frames. 
+</div>
+</details>
+
+// Missing num
+https://www.youtube.com/watch?v=8g78yfzMlao
+
+
+
+
+
 ### References
 
 ## Next: [Algorithms](/noteathon/java-ds-algo)
