@@ -1586,11 +1586,614 @@ class Solution {
 </div>
 </details>
 
+
+### [1010. Pairs of Songs With Total Durations Divisible by 60](https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/)
+- This problem is similar to Two-Sum problem, but instead we search for the the reminder value.
+- The bruteforce approach is to calculat the sum at each point, and check if the mod 60 is 0.
+- The optimized approach is based on a simple intution, where we store the frequency of the reminder in the hashmap.
+```java
+(x + y) % 60 == 0, which means that x%60 + y%60 == 60;
+e.g. if x = 110; y = ?
+110%60 + y = 60
+y = 60 - 50;
+y = 10;
+So, in hash map we look the freq count of 10.
+```
+
+
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+
+// Solution 1 : BruteForce, O(n^2)
+class Solution {
+    public int numPairsDivisibleBy60(int[] time) {
+        int counter = 0;
+        for(int i = 0;i<time.length-1;i++){
+            for(int j = i+1;j<time.length;j++){
+                if((time[i] + time[j]) % 60 == 0){
+                    counter++;
+                }
+            }
+        }
+        return counter;
+    }
+}
+
+// Approach 2 : O(n)
+class Solution {
+    public int numPairsDivisibleBy60(int[] time) {
+        int counter[] = new int[60];
+        int pairs = 0;
+        for(int i = 0;i<time.length;i++){
+            int mod = time[i] % 60;
+            if(mod == 0){
+                pairs+= counter[mod];
+            }else{
+                pairs+= counter[60 - mod];
+            }
+            counter[mod]++;
+        }
+        //System.out.println(" Time : "+ Arrays.toString(time));
+        return pairs;
+    }
+}
+```
+**Complexity Analysis**
+**TC** : O(n), when n is the length of the input array, because we would visit each element in time once.
+**SC** : O(1), because the size of the array remainders is fixed with 60.
+</div>
+</details>
+
+
+### [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+class Solution {
+    public int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+        LinkedList<int[]> merged = new LinkedList<>();
+        for (int[] interval : intervals) {
+            // if the list of merged intervals is empty or if the current
+            // interval does not overlap with the previous, simply append it.
+            if (merged.isEmpty() || merged.getLast()[1] < interval[0]) {
+                merged.add(interval);
+            }
+            // otherwise, there is overlap, so we merge the current and previous
+            // intervals.
+            else {
+                merged.getLast()[1] = Math.max(merged.getLast()[1], interval[1]);
+            }
+        }
+        return merged.toArray(new int[merged.size()][]);
+    }
+}
+```
+**Complexity Analysis**
+**TC** : O(nlogn) Other than the sort invocation, we do a simple linear scan of the list, so the runtime is dominated by the O(nlogn) complexity of sorting.
+**SC** : O(logN) (or O(n)O(n)) If we can sort intervals in place, we do not need more than constant additional space, although the sorting itself takes O(log n) space. Otherwise, we must allocate linear space to store a copy of intervals and sort that.
+</div>
+</details>
+
+
+### [66. Plus One](https://leetcode.com/problems/plus-one/)
+- There is only 1 special case where all the input arr is 9 elements, so for that we have to create a new array and return.
+- Also remember, we dont have to carry the **carry** till the end, just the last number and the before one if it is 9.
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+class Solution {
+  public int[] plusOne(int[] digits) {
+    int n = digits.length;
+
+    // move along the input array starting from the end
+    for (int idx = n - 1; idx >= 0; --idx) {
+      // set all the nines at the end of array to zeros
+      if (digits[idx] == 9) {
+        digits[idx] = 0;
+      }
+      // here we have the rightmost not-nine
+      else {
+        // increase this rightmost not-nine by 1
+        digits[idx]++;
+        // and the job is done
+        return digits;
+      }
+    }
+    // we're here because all the digits are nines
+    digits = new int[n + 1];
+    digits[0] = 1;
+    return digits;
+  }
+}
+```
+**Complexity Analysis**
+**TC** : O(N) since it's not more than one pass along the input list.
+**SC** : O(N) Although we perform the operation in-place (i.e. on the input list itself), in the worst scenario, we would need to allocate an intermediate space to hold the result, which contains the N+1 elements. Hence the overall space complexity of the algorithm is O(N).
+</div>
+</details>
+
+
+### [69. Sqrt(x)](https://leetcode.com/problems/sqrtx/)
+- Remember, when the square check is out of bound use the **Long** keyword.
+- Brute Force is O(n)
+- Optimized is O(Logn)
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+// Solution 1 - Brute Force O(n)
+class Solution {
+    public int mySqrt(int x) {
+        long i=0;
+        while( (i * i) <= x){
+            i++;
+        }
+        return (int) i-1;
+    }
+}
+
+// Solution 2 - Binary search
+class Solution {
+  public int mySqrt(int x) {
+    if (x < 2) return x;
+
+    long num;
+    int pivot, left = 2, right = x / 2;
+    while (left <= right) {
+      pivot = left + (right - left) / 2;
+      num = (long)pivot * pivot;
+      if (num > x) right = pivot - 1;
+      else if (num < x) left = pivot + 1;
+      else return pivot;
+    }
+
+    return right;
+  }
+}
+```
+**Complexity Analysis**
+**TC** : O(Log n), since it is getting divided by 2 everytime.
+**SC** : O(1)
+</div>
+</details>
+
+
+### [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+- At each step, we have two choices either to take the step 1 or to take the step 2 : ```climbStairs(i,n)=(i+1,n) + climbStairs(i+2,n)```
+- Brute force approach is recursiion without memoization, which would take O(2<sup>n</sup>).
+- After memoization, it would take O(n)
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+public class Solution {
+    public int climbStairs(int n) {
+        int memo[] = new int[n + 1];
+        return climb_Stairs(0, n, memo);
+    }
+    public int climb_Stairs(int i, int n, int memo[]) {
+        if (i > n) {
+            return 0;
+        }
+        if (i == n) {
+            return 1;
+        }
+        if (memo[i] > 0) {
+            return memo[i];
+        }   
+        // sum of choice with 1 step and 2 steps.
+        memo[i] = climb_Stairs(i + 1, n, memo) + climb_Stairs(i + 2, n, memo);
+        return memo[i];
+    }
+}
+```
+**Complexity Analysis**
+**TC** : O(n)
+**SC** : O(n)
+</div>
+</details>
+
+### [75. Sort Colors ](https://leetcode.com/problems/sort-colors/)
+
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+// Solution 1 - Freq or Bucket sort way
+class Solution {
+    public void sortColors(int[] nums) {
+        
+        int[] freq = new int[3];
+        
+        // Calc freq of 0,1,2
+        for(int i = 0;i<nums.length;i++){
+            freq[nums[i]]++;
+        }
+        
+        //System.out.println(" Array : "+ Arrays.toString(freq));
+        
+        // Replace the array items
+        for(int i=0;i<nums.length;i++){
+            
+            if(freq[0] != 0){
+                nums[i] = 0;
+                freq[0]--;
+            }else if(freq[1]!=0){
+                nums[i] = 1;
+                freq[1]--;
+            }else{
+                nums[i] = 2;
+                freq[2]--;
+            }
+        }
+    }
+}
+
+// Solution 2 - One Pass
+class Solution {
+    public void sortColors(int[] nums) {
+        int left = 0;
+        int right = nums.length-1;
+        int k = left + 1;
+        // 1 2 0
+        while(k <= right){
+            //System.out.println(" K : "+nums[k]);
+            if(nums[k] == 0){
+                swap(nums, left, k);
+                // increment left after swap, since till that left part all are sorted or == 0 
+                left++;
+            }
+            if(nums[k] == 2){
+                swap(nums, right, k);
+                // reduce right after swap, since till that right all are sorted or == 2
+                right--;
+                // Decrement and check again after swap
+                k--;
+            }
+            k += 1;
+        }
+    }
+    
+    private void swap(int[] nums, int i, int j){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
+```
+**Complexity Analysis**
+**TC** : O(N) since it's one pass along the array of length N.
+**SC** : O(1) since it's a constant space solution.
+</div>
+</details>
+
+### [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+- TODO : check the optimized approach too.
+- [Why you failed the last test case: An interesting bug when I used two HashMaps in Java](https://leetcode.com/problems/minimum-window-substring/discuss/266059/)
+
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+class Solution {
+    public String minWindow(String s, String t) {
+        
+         if (s.length() == 0 || t.length() == 0) {
+            return "";
+        }
+        
+        // Make target freq count
+        Map<Character, Integer> targetMap = new HashMap<>();
+        Map<Character, Integer> windowMap = new HashMap<>();
+        for(int i = 0;i<t.length();i++){
+            char c = t.charAt(i);
+            targetMap.put(c,targetMap.getOrDefault(c, 0)+1);
+        }
+        
+        int start = 0;
+        int end = 0;
+        int required = targetMap.size();
+        int formed = 0;
+        int[] values = new int[]{-1,0,0};
+        
+        while(end<s.length()){
+            
+            char currChar = s.charAt(end);
+            // Add to the window map
+            windowMap.put(currChar, windowMap.getOrDefault(currChar, 0)+1);
+            
+            // Check if part of the target
+            if(targetMap.containsKey(currChar)){
+                // if count >= target then the character count is satisfied.
+                Integer val1 = windowMap.get(currChar);
+                Integer val2 = targetMap.get(currChar);
+                
+                // ****** VERY IMPORTANT else last test case wont pass
+                // For more info : https://leetcode.com/problems/minimum-window-substring/discuss/266059/Why-you-failed-the-last-test-case%3A-An-interesting-bug-when-I-used-two-HashMaps-in-Java
+
+                if(windowMap.get(currChar) - targetMap.get(currChar) == 0 ){
+                    formed++;
+                }
+            }
+            
+            // Substring is formed, try reducing it, by incrementing left
+            while(start <= end && formed == required){
+                char startChar = s.charAt(start);
+                // System.out.println(" Map : "+targetMap + windowMap);
+                int subLen = end - start + 1;
+                if(values[0] == -1 || subLen < values[0]){
+                    values = new int[]{subLen, start, end};
+                }
+                
+                //System.out.println(" "+s.substring(start,end+1));
+                // Remove the start character
+                
+                windowMap.put(startChar, windowMap.get(startChar)-1);
+                if(targetMap.containsKey(startChar) &&
+                   windowMap.get(startChar) < targetMap.get(startChar)){
+                    formed--;
+                }
+                start++;
+            }
+            end++;
+        }
+        // System.out.println(" Start , End "+start+","+end);
+        if(values[0] == -1){
+            return "";
+        }
+        String subString = s.substring(values[1], values[2]+1);
+        return subString;
+    }
+    
+}
+```
+**Complexity Analysis**
+**TC** : O(|S| + |T|) where |S| and |T| represent the lengths of strings S and T. In the worst case we might end up visiting every element of string S twice, once by left pointer and once by right pointer. |T| represents the length of string T.
+**SC** : O(∣S∣+∣T∣). |S| when the window size is equal to the entire string SS. |T| when T has all unique characters.
+</div>
+</details>
+
+
+### [79. Word Search](https://leetcode.com/problems/word-search/)
+
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+class Solution {
+    boolean[][] visited;
+    public boolean exist(char[][] board, String word) {
+        
+        visited = new boolean[board.length][board[0].length];
+        
+        // Check if the first character matches then call the helper
+        for(int i = 0;i<board.length;i++){
+            for(int j = 0;j<board[i].length;j++){
+                if(board[i][j] == word.charAt(0)){
+                    if(helper(i , j, 0, board, word)){
+                        return true;
+                    }
+                }
+            }
+        }
+        
+        return false;
+    }
+    
+    
+    private boolean helper(int i,int j,int startIdx,char[][] board, String word){
+        // if reached end then return true search completed
+        if(startIdx == word.length()){
+            return true;
+        }
+        
+        // bounds check and the character similar to the next what we want
+        if(i < 0 || i>=board.length || j<0 || j>=board[i].length || word.charAt(startIdx)!=board[i][j]
+          || visited[i][j]){
+            return false;
+        }
+        
+        // add to visited arr
+        visited[i][j] = true;
+        if(helper(i+1,j,startIdx+1,board, word) ||
+          helper(i-1,j,startIdx+1,board, word) ||
+          helper(i,j-1,startIdx+1,board, word) ||
+          helper(i,j+1,startIdx+1,board, word)){
+            return true;
+        }
+        // remove after visit
+        visited[i][j] = false;
+        
+        return false;
+    }
+}
+```
+**Complexity Analysis**
+**TC** :
+- O(N⋅3 ^ L ) where N is the number of cells in the board and L is the length of the word to be matched. For the backtracking function, initially we could have at most 4 directions to explore, but further the choices are reduced into 3 (since we won't go back to where we come from). As a result, the execution trace after the first step could be visualized as a 3-ary tree, each of the branches represent a potential exploration in the corresponding direction. Therefore, in the worst case, the total number of invocation would be the number of nodes in a full 3-nary tree, which is about 
+3 ^L. 
+- We iterate through the board for backtracking, i.e. there could be N times invocation for the backtracking function in the worst case. As a result, overall the time complexity of the algorithm would be O(N⋅3 L ).
+**SC** : The main consumption of the memory lies in the recursion call of the backtracking function. The maximum length of the call stack would be the length of the word. Therefore, the space complexity of the algorithm is O(L).
+</div>
+</details>
+
+### [78. Subsets](https://leetcode.com/problems/subsets/)
+
+<details><summary>Solution</summary><div markdown="1">
+
+- [Video](https://www.youtube.com/watch?v=REOH22Xwdkk)
+- [Code](https://github.com/neetcode-gh/leetcode/blob/main/java/78-Subsets.java)
+
+<img src="/noteathon/images/tc_78.png" align="center" title="MainScreen">
+
+```java
+class Solution {
+    List<List<Integer>> result;
+    public List<List<Integer>> subsets(int[] nums) {
+        result = new ArrayList<>();
+        backtrack(nums, 0, new ArrayList<>());
+        return result;
+    }
+    
+    
+    private void backtrack(int[] nums, int idx, List<Integer> list){
+        if(idx >= nums.length){
+            // System.out.println(" List : "+list);
+            result.add(new ArrayList<>(list));
+            return;
+        }
+        
+        // Add - Choice 1 - Includ
+        list.add(nums[idx]);
+        backtrack(nums, idx+1, new ArrayList<>(list));
+        // Remove
+        list.remove(list.size()-1);
+        // Choice 2 - Dont Include
+        backtrack(nums, idx+1, new ArrayList<>(list));
+    }
+}
+
+// Solution 2 - Iterative Recursive
+class Solution {
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        helper(0, nums, new ArrayList<>(), result);
+        return result;
+    }
+    
+    private void helper(int idx, int[] nums, List<Integer> list, List<List<Integer>> result){
+        System.out.println(" List : "+list);
+        // [], [1], [1,2], [1,2,3], [1,3], [2], [2,3], [3]
+        // Choice 1 : Add the list as it is 
+        result.add(new ArrayList<>(list));
+        for(int i = idx;i<nums.length;i++){
+            list.add(nums[i]);
+            // Choice 2 : Add with the element and then remove
+            helper(i+1, nums, list, result);
+            list.remove(list.size()-1);
+        }
+    }
+}
+
+```
+**Complexity Analysis**
+**TC** : O(N×2^N) to generate all subsets and then copy them into output list. We are going n levels, with each level having 2^n choices.
+**SC** : O(N). We are using O(N) space to maintain curr, and are modifying curr in-place with backtracking. Note that for space complexity analysis, we do not count space that is only used for the purpose of returning output, so the output array is ignored.
+</div>
+</details>
+
+
+### [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
+- Brute force would be to merge both arrays using a new array and then use the sort function.
+
+<details><summary>Solution</summary><div markdown="1">
+
+```java
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int last = m + n - 1; // Equal to nums1.length - 1;
+        // Compare the last elements which is m & n
+        // This is better to do instead of taking m - 1 and n - 1, else bounds case to be written
+        while(m > 0 && n > 0){
+            if(nums1[m-1] > nums2[n-1]){
+                nums1[last] = nums1[m-1];
+                m-=1;
+            }else{
+                // lt equal then copy from nums2
+                nums1[last] = nums2[n-1];
+                n-=1;
+            }
+            last--;
+        }
+        
+        // System.out.println("  m,n,last : "+m+","+n+","+last);
+        // Remaining elements copy since they are already sorted
+        // This means nums1 elems were less than nums2, else nums1 had pending.
+        while(n>0){
+            nums1[last] = nums2[n-1];
+            last--;
+            n--;
+        }
+    }
+}
+```
+**Complexity Analysis**
+**TC** : O(n + m) since we are iterating both the arrays.
+**SC** : O(1) - just using constant variables.
+</div>
+</details>
+
+### [91. Decode Ways](https://leetcode.com/problems/decode-ways/)
+- Two choices we have either to pick a single number or double number.
+- Increment the idx after you pick.
+- Check the iterative soltuion too.
+- Check [Video](https://www.youtube.com/watch?v=N5i7ySYQcgM)
+
+<details><summary>Solution</summary><div markdown="1">
+
+<img src="/noteathon/images/tc_91.png" align="center" title="MainScreen">
+
+```java
+
+// Solution 1 : Recursive 
+class Solution {
+    int[] dp;
+    public int numDecodings(String s) {
+        dp = new int[102];
+        Arrays.fill(dp, -1);
+        return helper1(0,s);
+    }
+    
+    private int helper1(int start, String s){
+        
+        if(dp[start] != -1){
+            return dp[start];
+        }
+        
+        if(start >= s.length()){
+            return 1;
+        }
+        // If the start is 0 then it can't be decoded
+        if(s.charAt(start) == '0'){
+            return 0;
+        }
+        
+        
+        int firstNum = Integer.parseInt(s.substring(start, start+1));
+        int secNum = 0;
+        if(start+2<=s.length()){
+            secNum = Integer.parseInt(s.substring(start, start+2));
+        }
+        
+        //System.out.println(" Nums : "+firstNum + ", "+secNum);
+        
+        int ans = 0;
+        // Check the choice 1, as it can be single number or double but not gt > 26
+        if(firstNum>=1 && firstNum<=9){
+            ans+=helper1(start+1, s);
+        }
+        // Check the choice 2, as it can be single number or double but not gt > 26
+        if(secNum>=1 && secNum<=26){
+            ans+=helper1(start+2, s);
+        }
+        
+        return dp[start] = ans;
+    }
+}
+```
+**Complexity Analysis**
+**TC** : O(N), where N is length of the string. Memoization helps in pruning the recursion tree and hence decoding for an index only once. Thus this solution is linear time complexity.
+**SC** : O(N). The dictionary used for memoization would take the space equal to the length of the string. There would be an entry for each index value. The recursion stack would also be equal to the length of the string.
+</div>
+</details>
+
+
+<!-- TODO
 // Missing num
 https://www.youtube.com/watch?v=8g78yfzMlao
+// GS questions
+https://leetcode.com/problems/reaching-points/
+https://www.geeksforgeeks.org/reduce-the-string-by-removing-k-consecutive-identical-characters/
 
-
-
+-->
 
 
 ### References
