@@ -12,6 +12,7 @@ title: "Noteathon"
 {% include url-thumbnail.html url="/noteathon/dynamic-programming" %}
 {% include url-thumbnail.html url="/noteathon/java-ds-algo" %}
 {% include url-thumbnail.html url="/noteathon/python-crash-course" %}
+{% include url-thumbnail.html url="/noteathon/basic-math-for-ds" %}
 {% include url-thumbnail.html url="/noteathon/lc-top-interview-qs" %}
 </div>
 

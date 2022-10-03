@@ -1,7 +1,7 @@
 ---
 layout: blog-post
-title: "LC-Top-Interview_Qs"
-slug: lc-top-interview_qs
+title: "LC-Top-Interview-Qs"
+slug: lc-top-interview-qs
 meta-title: lc
 meta-description: LC-Top-Interview_Qs
 meta-image: https://raw.githubusercontent.com/LeetCode-OpenSource/vscode-leetcode/master/resources/LeetCode.png
@@ -2192,7 +2192,9 @@ https://www.youtube.com/watch?v=8g78yfzMlao
 // GS questions
 https://leetcode.com/problems/reaching-points/
 https://www.geeksforgeeks.org/reduce-the-string-by-removing-k-consecutive-identical-characters/
-
+https://leetcode.com/problems/palindromic-substrings/
+https://leetcode.com/problems/reaching-points/
+// Count Different Palindromic Subsequences of length 5 using 0's    and 1's
 -->
 
 
