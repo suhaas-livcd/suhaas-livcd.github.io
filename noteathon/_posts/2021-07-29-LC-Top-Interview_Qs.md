@@ -57,6 +57,18 @@ Approach 3: One-pass Hash Table
 
 It turns out we can do it in one-pass. While we are iterating and inserting elements into the hash table, we also look back to check if current element's complement already exists in the hash table. If it exists, we have found a solution and return the indices immediately.
 
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        prevMap = {}  # val -> index
+
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in prevMap:
+                return [prevMap[diff], i]
+            prevMap[n] = i
+```
+
 ```java
 class Solution {
     public int[] twoSum(int[] nums, int target) {
@@ -125,6 +137,24 @@ class Solution {
 }
 ```
 
+```python
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        carry = 0
+        temp = ListNode() # default value is 0
+        head = temp
+        while l1 or l2 or carry: # check till any of the values are not zero or None
+            sumIs = l1.val if l1 else 0
+            sumIs += l2.val if l2 else 0
+            sumIs += carry
+            # print(sumIs)
+            temp.next = ListNode(sumIs%10)
+            carry = sumIs//10
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+            temp = temp.next
+        return head.next
+```
 **Complexity Analysis**
 
 Time complexity : O(max(m, n)). Assume that mm and nn represents the length of l1 and l2 respectively, the algorithm above iterates at most max(m, n) times.
@@ -2185,6 +2215,8 @@ class Solution {
 </div>
 </details>
 
+### Word break
+<!-- // https://www.youtube.com/watch?v=LPs6Qo5qlJM -->
 
 <!-- TODO
 // Missing num
